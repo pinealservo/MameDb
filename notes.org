@@ -1,0 +1,182 @@
+#+TITLE: MAME Database Model Notes
+
+* Machine
+
+This is actually overloaded to represent a number of things, both game machines
+and some of their components.
+
+A game machine will use the ~romof~ attribute on its own to indicate that it is
+based on a BIOS machine, and it will use the ~cloneof~ attribute along with
+~romof~ to indicate that it is a variant of some other machine. These references
+can be used to look up ROMs that aren't stored with the machine-specific
+ROMs.
+
+A machine will use the ~sampleof~ attribute to indicate that it uses recorded
+sound samples rather than emulated ones generated from ROM data; the sample set
+to look in for samples is indicated by the attribute.
+
+** BIOS
+
+This seems to represent the base hardware and software platform that a number of
+games have been built on. A major example is the NeoGeo platform. Games
+utilizing the platform will have the ~romof~ attribute set to the BIOS's machine
+name, ~neogeo~.
+
+A machine is a BIOS when it has ~isbios~ of ~yes~.
+
+** Device
+
+This represents an individual hardware subcomponent that is linked from one or
+more machines' ~device_ref~ tags. Their ~machine~ entry associates the hardware
+with the source file to emulate it as well as with any roms required.
+
+A machine is a Device when it has ~isdevice~ of ~yes~.
+
+** Machine
+
+Machine entries that are not BIOS or Device entries represent top-level devices,
+generally arcade game machines.
+
+
+* Bios Sets
+
+These might be more accurrately called ROM sets; they are used to describe a set
+of ROM images that vary across versions of the same machine. One is tagged as
+"default", and this set is loaded by default unless another is specified.
+
+Each set has a name, and ROMs belonging to the set are tagged with that name in
+the ~bios~ attribute.
+
+* ROMs
+
+A ROM represents the dumped binary contents of some memory in a machine. They
+are the programs and data that provide the functionality of the machine.
+Emulation requires a perfect image of the data stored in each memory. There are
+many ROM images that are identical across families of devices, while others are
+similar with important variations.
+
+Each machine entry therefore has a list of ROM entries required for its
+operation. The attributes of a ROM entry are:
+
+** Name
+
+This name is the filename used to find the ROM dump when the data is stored in
+the machine's directory (or zip file). It is often descriptive of where the part
+the data was extracted from sits on the machine's boards.
+
+** Merge
+
+When the machine is a clone of another or when it runs on a BIOS machine, it
+will have some ROM images in common with its "parent" machine. In that case,
+those images may be stored with the parent machine instead of this machine.
+
+The merge attribute indicates the filename by which it can be found in the
+parent machine's directory (or zip file). It is often the same name as in the
+current machine, but it sometimes different.
+
+** BIOS
+
+When the ROM image belongs to a BIOS Set, the BIOS attribute tells which BIOS
+Set it belongs to. ROMs belonging to a BIOS Set are only loaded when the BIOS
+set they belong to is the active one.
+
+** Size
+
+The number of bytes in the image as a decimal integer.
+
+** CRC
+
+This is used to verify that the correct ROM image is stored in the file used to
+load it.
+
+** SHA1
+
+This cryptographic hash is used to verify ROM image correctness as well; it is
+less vulnerable to collisions than the CRC.
+
+** Region
+
+This is a tag that is used to associate the ROM image with some component of the
+machine. The region name will often be found as a tag on a ~device~ or ~chip~,
+but is sometimes a common name as well.
+
+** Offset
+
+When multiple ROMs are loaded into a shared address space, this hexadecimal
+value is used to indicate what offset in memory the image should be loaded into.
+
+** Status
+
+This indicates whether there is even a ROM image that's been dumped, or if
+there's some known problem with the existing dump.
+
+** Optional
+
+An optional ROM image isn't required for some level of functionality.
+
+* Disks
+
+Many newer machines have greater store requirements than can be met by the solid
+state memory that ROM dumps come from. They may use hard drives, optical disks,
+etc. Dumps of these are stored separately from the ROMs in ~CHD~ files.
+
+The disks share many of the same attributes, for the same purposes, with ROMs.
+
+* Device References
+
+Machines often have some components in common; device reference tags have the
+names of machine-level devices that are components of this machine; these
+references must be followed to determine if they have their own ROMs that will
+need to be available.
+
+* Samples
+
+When emulation has not yet been created for the sound-producing equipment of a
+machine, sounds will often be recorded so that the emulator can play them back
+at appropriate times. These samples are stored separately from ROMs in
+directories given by the ~sampleof~ attribute on the machine.
+
+Each sample used by this machine will have a ~sample~ tag with the filename of
+the sample.
+
+* Chips
+
+Chips represent devices in the machine that are emulated a specifc way, either
+as a ~cpu~ or as an ~audio~ chip. The ~tag~ is used to identify ROM regions and
+the ~clock~ determines how fast the emulation should run.
+
+* Displays
+
+Describes a lot of physical parameters of a machine's display capabilities that
+are required to properly display emulated images.
+
+* DIP Switches
+
+Machines often have a variety of options that can be changed by the owner
+according to how they'd like the machine to work; for arcade machines, a common
+setting is the number of coins required per credit.
+
+These entries provide a description of the emulated options and what the various
+switch positions will select.
+
+* Configurations
+
+* Ports
+
+* Adjusters
+
+* Driver
+
+This indicates the current emulation status, both overall and of a variety of
+subsystems.
+
+* Devices
+
+* Slots
+
+* Software Lists
+
+For MESS devices (i.e. home computer and game systems) the supported software
+that can be run is listed here.
+
+* RAM Options

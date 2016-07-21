@@ -1,0 +1,41 @@
+name:                MameDB
+version:             0.1.0.0
+synopsis:            Tool for manipulating MAME ROMs
+-- description:         
+license:             BSD3
+license-file:        LICENSE
+author:              Levi Pearson
+maintainer:          levipearson@gmail.com
+-- copyright:           
+category:            Tools
+build-type:          Simple
+-- extra-source-files:  
+cabal-version:       >=1.10
+
+executable mamedb
+  main-is:           Main.hs
+  other-modules:     MameDb.Types
+                   , MameDb.XmlParse
+                   , MameDb.Database
+  -- other-extensions:    
+  build-depends:     base
+                   , text
+                   , transformers
+                   , resourcet
+                   , conduit
+                   , xml-types
+                   , xml-conduit
+                   , contravariant
+                   , hasql
+  hs-source-dirs:    src
+  default-language:  Haskell2010
+
+test-suite tests
+  type:              exitcode-stdio-1.0
+  other-modules:   
+  main-is:           Test.hs
+  build-depends:     base
+  build-depends:     tasty
+                   , tasty-hspec
+  hs-source-dirs:    tests, src
+  default-language:  Haskell2010
