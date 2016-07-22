@@ -283,6 +283,7 @@ parseControl =
             <*> attr "ways"
             <*> attr "ways2"
             <*> attr "ways3"
+            <*  attr "buttons"
 
 parseInput :: MonadThrow m => ConduitM Event o m (Maybe Input)
 parseInput =

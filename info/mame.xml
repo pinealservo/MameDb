@@ -1,0 +1,2193 @@
+<?xml version="1.0"?>
+<mame build="0.175 (unknown)" debug="no" mameconfig="10">
+	<machine name="victor" sourcefile="hec2hrp.cpp" cloneof="hec2hrp" romof="hec2hrp">
+		<description>Victor</description>
+		<year>1980</year>
+		<manufacturer>Micronique</manufacturer>
+		<rom name="victor.rom" size="4096" crc="d1e9508f" sha1="d0f1bdcd39917fafc8859223ab38eee2a7dc85ff" region="maincpu" offset="0"/>
+		<device_ref name="z80"/>
+		<device_ref name="screen"/>
+		<device_ref name="palette"/>
+		<device_ref name="speaker"/>
+		<device_ref name="wave"/>
+		<device_ref name="sn76477"/>
+		<device_ref name="discrete"/>
+		<device_ref name="cassette_image"/>
+		<device_ref name="printer_image"/>
+		<chip type="cpu" tag="maincpu" name="Z80" clock="5000000"/>
+		<chip type="audio" tag="mono" name="Speaker"/>
+		<chip type="audio" tag="wave" name="Wave"/>
+		<chip type="audio" tag="sn76477" name="SN76477"/>
+		<chip type="audio" tag="discrete" name="DISCRETE"/>
+		<display tag="screen" type="raster" rotate="0" width="244" height="228" refresh="50.000000" />
+		<sound channels="1"/>
+		<input players="1">
+			<control type="keyboard" buttons="67"/>
+		</input>
+		<port tag=":KEY.8">
+		</port>
+		<port tag=":KEY.7">
+		</port>
+		<port tag=":KEY.6">
+		</port>
+		<port tag=":KEY.5">
+		</port>
+		<port tag=":KEY.0">
+		</port>
+		<port tag=":KEY.4">
+		</port>
+		<port tag=":KEY.3">
+		</port>
+		<port tag=":KEY.2">
+		</port>
+		<port tag=":KEY.1">
+		</port>
+		<driver status="imperfect" emulation="good" color="good" sound="imperfect" graphic="good" savestate="unsupported"/>
+		<device type="cassette" tag="cassette">
+			<instance name="cassette" briefname="cass"/>
+			<extension name="wav"/>
+			<extension name="k7"/>
+			<extension name="cin"/>
+			<extension name="for"/>
+		</device>
+		<device type="printer" tag="printer">
+			<instance name="printer" briefname="prin"/>
+			<extension name="prn"/>
+		</device>
+	</machine>
+	<machine name="victor21" sourcefile="subsino.cpp">
+		<description>Victor 21</description>
+		<year>1990</year>
+		<manufacturer>Subsino / Buffy</manufacturer>
+		<rom name="1.u1" size="65536" crc="43999b2d" sha1="7ce26fd332ffe35fd826a1a6166b228d4bc370b8" region="maincpu" offset="10000"/>
+		<rom name="2.u24" size="32768" crc="f1181b93" sha1="53cd4d2ce13973495b51d911a4745a69a9784983" region="tilemap" offset="10000"/>
+		<rom name="3.u25" size="32768" crc="437abb27" sha1="bd3790807d60a41d58e07f60fb990553076d6e96" region="tilemap" offset="8000"/>
+		<rom name="4.u26" size="32768" crc="e2f66eee" sha1="ece924fe626f21fd7d31faabf19225d80e2bcfd3" region="tilemap" offset="0"/>
+		<rom name="74s287.u35" size="256" crc="40094bed" sha1="b25d96126b3f7bd06bf76dc9958f8669f83abdb7" region="proms" offset="0"/>
+		<rom name="74s287.u36" size="256" crc="9ca021c5" sha1="6a1d8d4f958d36e4a676dc4f4aee83d637933bc3" region="proms" offset="100"/>
+		<device_ref name="z180"/>
+		<device_ref name="ticket_dispenser"/>
+		<device_ref name="screen"/>
+		<device_ref name="gfxdecode"/>
+		<device_ref name="palette"/>
+		<device_ref name="speaker"/>
+		<device_ref name="ym2413"/>
+		<device_ref name="okim6295"/>
+		<chip type="cpu" tag="maincpu" name="Z180" clock="1500000"/>
+		<chip type="audio" tag="mono" name="Speaker"/>
+		<chip type="audio" tag="ymsnd" name="YM2413" clock="3579545"/>
+		<chip type="audio" tag="oki" name="OKI6295" clock="1108404"/>
+		<display tag="screen" type="raster" rotate="0" width="512" height="224" refresh="60.000000" />
+		<sound channels="1"/>
+		<input players="1" coins="3" service="yes">
+			<control type="gambling" buttons="9"/>
+		</input>
+		<dipswitch name="Main Game Rate" tag="SW2" mask="3">
+			<dipvalue name="75%" value="0"/>
+			<dipvalue name="80%" value="1"/>
+			<dipvalue name="85%" value="3" default="yes"/>
+			<dipvalue name="90%" value="2"/>
+		</dipswitch>
+		<dipswitch name="Max Rate" tag="SW2" mask="4">
+			<dipvalue name="Off" value="4" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Minimum Bet" tag="SW2" mask="24">
+			<dipvalue name="1" value="16"/>
+			<dipvalue name="5" value="8"/>
+			<dipvalue name="10" value="24" default="yes"/>
+			<dipvalue name="20" value="0"/>
+		</dipswitch>
+		<dipswitch name="Attract Music" tag="SW2" mask="32">
+			<dipvalue name="Off" value="0"/>
+			<dipvalue name="On" value="32" default="yes"/>
+		</dipswitch>
+		<dipswitch name="SW2 - 40" tag="SW2" mask="64">
+			<dipvalue name="Off" value="64" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW2" mask="128">
+			<dipvalue name="Off" value="128" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="SW3" tag="SW3" mask="1">
+			<dipvalue name="Off" value="1" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW3" mask="2">
+			<dipvalue name="Off" value="2" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW3" mask="4">
+			<dipvalue name="Off" value="4" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW3" mask="8">
+			<dipvalue name="Off" value="8" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW3" mask="16">
+			<dipvalue name="Off" value="16" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW3" mask="32">
+			<dipvalue name="Off" value="32" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW3" mask="64">
+			<dipvalue name="Off" value="64" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW3" mask="128">
+			<dipvalue name="Off" value="128" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Coinage" tag="SW1" mask="7">
+			<dipvalue name="1 Coin/1 Credit" value="6"/>
+			<dipvalue name="1 Coin/2 Credits" value="5"/>
+			<dipvalue name="1 Coin/5 Credits" value="4"/>
+			<dipvalue name="1 Coin / 10 Credits" value="7" default="yes"/>
+			<dipvalue name="1 Coin / 20 Credits" value="3"/>
+			<dipvalue name="1 Coin / 25 Credits" value="2"/>
+			<dipvalue name="1 Coin / 50 Credits" value="1"/>
+			<dipvalue name="1 Coin / 100 Credits" value="0"/>
+		</dipswitch>
+		<dipswitch name="Key In" tag="SW1" mask="8">
+			<dipvalue name="100 Points/Pulse" value="8" default="yes"/>
+			<dipvalue name="200 Points/Pulse" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW1" mask="16">
+			<dipvalue name="Off" value="16" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW1" mask="32">
+			<dipvalue name="Off" value="32" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW1" mask="64">
+			<dipvalue name="Off" value="64" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW1" mask="128">
+			<dipvalue name="Off" value="128" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<port tag=":INB">
+		</port>
+		<port tag=":SW2">
+		</port>
+		<port tag=":INA">
+		</port>
+		<port tag=":SW3">
+		</port>
+		<port tag=":INC">
+		</port>
+		<port tag=":SW1">
+		</port>
+		<driver status="good" emulation="good" color="good" sound="good" graphic="good" savestate="unsupported"/>
+	</machine>
+	<machine name="victor5" sourcefile="subsino.cpp">
+		<description>G.E.A.</description>
+		<year>1991</year>
+		<manufacturer>Subsino</manufacturer>
+		<rom name="1.u1" size="65536" crc="e3ada2fc" sha1="eddb460dcb80a29fbbe3ed6c4733c75b892baf52" region="maincpu" offset="10000"/>
+		<rom name="2.u24" size="32768" crc="1229e951" sha1="1e548625bb60e2d6f52a376a0dea9e5709f94135" region="tilemap" offset="10000"/>
+		<rom name="3.u23" size="32768" crc="2d89bbf1" sha1="d7fda0174a835e88b330dfd09bdb604bfe4c2e44" region="tilemap" offset="8000"/>
+		<rom name="4.u22" size="32768" crc="ecf840a1" sha1="9ecf522afb23e3557d37effc3c8568e8a14dad1a" region="tilemap" offset="0"/>
+		<rom name="74s287.u35" size="256" crc="40094bed" sha1="b25d96126b3f7bd06bf76dc9958f8669f83abdb7" status="baddump" region="proms" offset="0"/>
+		<rom name="74s287.u36" size="256" crc="9ca021c5" sha1="6a1d8d4f958d36e4a676dc4f4aee83d637933bc3" status="baddump" region="proms" offset="100"/>
+		<device_ref name="z180"/>
+		<device_ref name="ticket_dispenser"/>
+		<device_ref name="screen"/>
+		<device_ref name="gfxdecode"/>
+		<device_ref name="palette"/>
+		<device_ref name="speaker"/>
+		<device_ref name="ym2413"/>
+		<device_ref name="okim6295"/>
+		<chip type="cpu" tag="maincpu" name="Z180" clock="1500000"/>
+		<chip type="audio" tag="mono" name="Speaker"/>
+		<chip type="audio" tag="ymsnd" name="YM2413" clock="3579545"/>
+		<chip type="audio" tag="oki" name="OKI6295" clock="1108404"/>
+		<display tag="screen" type="raster" rotate="0" width="512" height="224" refresh="60.000000" />
+		<sound channels="1"/>
+		<input players="1" coins="1" service="yes">
+			<control type="gambling" buttons="10"/>
+		</input>
+		<dipswitch name="Main Game Rate" tag="SW2" mask="3">
+			<dipvalue name="68%" value="0"/>
+			<dipvalue name="76%" value="1"/>
+			<dipvalue name="84%" value="3" default="yes"/>
+			<dipvalue name="92%" value="2"/>
+		</dipswitch>
+		<dipswitch name="Double-Up Rate" tag="SW2" mask="12">
+			<dipvalue name="74%" value="0"/>
+			<dipvalue name="80%" value="4"/>
+			<dipvalue name="86%" value="12" default="yes"/>
+			<dipvalue name="92%" value="8"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW2" mask="16">
+			<dipvalue name="Off" value="16" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW2" mask="32">
+			<dipvalue name="Off" value="32" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Minimum Bet" tag="SW2" mask="192">
+			<dipvalue name="1" value="128"/>
+			<dipvalue name="5" value="64"/>
+			<dipvalue name="10" value="192" default="yes"/>
+			<dipvalue name="20" value="0"/>
+		</dipswitch>
+		<dipswitch name="SW3" tag="SW3" mask="1">
+			<dipvalue name="Off" value="1" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW3" mask="2">
+			<dipvalue name="Off" value="2" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW3" mask="4">
+			<dipvalue name="Off" value="4" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW3" mask="8">
+			<dipvalue name="Off" value="8" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW3" mask="16">
+			<dipvalue name="Off" value="16" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW3" mask="32">
+			<dipvalue name="Off" value="32" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Attract Music" tag="SW3" mask="64">
+			<dipvalue name="Off" value="64"/>
+			<dipvalue name="On" value="0" default="yes"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW3" mask="128">
+			<dipvalue name="Off" value="128" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Coinage" tag="SW1" mask="7">
+			<dipvalue name="1 Coin/1 Credit" value="6"/>
+			<dipvalue name="1 Coin/2 Credits" value="5"/>
+			<dipvalue name="1 Coin/5 Credits" value="4"/>
+			<dipvalue name="1 Coin / 10 Credits" value="7" default="yes"/>
+			<dipvalue name="1 Coin / 20 Credits" value="3"/>
+			<dipvalue name="1 Coin / 25 Credits" value="2"/>
+			<dipvalue name="1 Coin / 50 Credits" value="1"/>
+			<dipvalue name="1 Coin / 100 Credits" value="0"/>
+		</dipswitch>
+		<dipswitch name="Key In" tag="SW1" mask="8">
+			<dipvalue name="100 Points/Pulse" value="8" default="yes"/>
+			<dipvalue name="500 Points/Pulse" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW1" mask="16">
+			<dipvalue name="Off" value="16" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW1" mask="32">
+			<dipvalue name="Off" value="32" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Max Bet" tag="SW1" mask="192">
+			<dipvalue name="20" value="128"/>
+			<dipvalue name="40" value="64"/>
+			<dipvalue name="50" value="192" default="yes"/>
+			<dipvalue name="80" value="0"/>
+		</dipswitch>
+		<port tag=":INB">
+		</port>
+		<port tag=":SW2">
+		</port>
+		<port tag=":INA">
+		</port>
+		<port tag=":SW3">
+		</port>
+		<port tag=":INC">
+		</port>
+		<port tag=":SW1">
+		</port>
+		<driver status="good" emulation="good" color="good" sound="good" graphic="good" savestate="unsupported"/>
+	</machine>
+	<machine name="victor6" sourcefile="subsino.cpp">
+		<description>Victor 6 (v2.3N)</description>
+		<year>1995</year>
+		<manufacturer>American Alpha</manufacturer>
+		<rom name="victor_6ii-rom_1.ver2.3n.u18" size="65536" crc="d496ecbd" sha1="1f982b42bc46c09298916a6cb2db0b38c6451ec3" region="maincpu" offset="a000"/>
+		<rom name="victor_6ii-rom_3_ver1.0.u16" size="131072" crc="4e96c30a" sha1="4989b10a52ba61459864aa44be9ebafe68b4d231" region="tilemap" offset="0"/>
+		<rom name="victor_6ii-rom_2_ver1.0.u17" size="131072" crc="4630a1da" sha1="a14df7d7047350a7b1ae485570869d9fa50a2f6d" region="tilemap" offset="20000"/>
+		<rom name="victor_6ii-rom_4_ver1.0.u54" size="131072" crc="ed2a6ff8" sha1="b776b85a350cd0176ffa04248084475d07ac5bfa" region="oki" offset="0"/>
+		<rom name="n82s129.u11" size="256" crc="e8d7c8c3" sha1="26ea907e45e70269956f842817b2d827cbc647ec" region="proms" offset="0"/>
+		<rom name="n82s129.u12" size="256" crc="4cee9225" sha1="bb784ff636f90de3965272021f610abb41e0d40d" region="proms" offset="100"/>
+		<rom name="n82s129.u13" size="256" crc="b135c3eb" sha1="54b04c5c4eb3a769123f2630740f0575e2ea6ff2" region="proms" offset="200"/>
+		<device_ref name="z180"/>
+		<device_ref name="ticket_dispenser"/>
+		<device_ref name="screen"/>
+		<device_ref name="gfxdecode"/>
+		<device_ref name="palette"/>
+		<device_ref name="speaker"/>
+		<device_ref name="ym3812"/>
+		<device_ref name="okim6295"/>
+		<chip type="cpu" tag="maincpu" name="Z180" clock="1500000"/>
+		<chip type="audio" tag="mono" name="Speaker"/>
+		<chip type="audio" tag="ymsnd" name="YM3812" clock="3579545"/>
+		<chip type="audio" tag="oki" name="OKI6295" clock="1108404"/>
+		<display tag="screen" type="raster" rotate="0" width="512" height="224" refresh="60.000000" />
+		<sound channels="1"/>
+		<input players="1" coins="1" service="yes">
+			<control type="gambling" buttons="8"/>
+		</input>
+		<dipswitch name="Unknown" tag="SW4" mask="1">
+			<dipvalue name="Off" value="1" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW4" mask="2">
+			<dipvalue name="Off" value="2" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW4" mask="4">
+			<dipvalue name="Off" value="4" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW4" mask="8">
+			<dipvalue name="Off" value="8" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW4" mask="16">
+			<dipvalue name="Off" value="16" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW4" mask="32">
+			<dipvalue name="Off" value="32" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW4" mask="64">
+			<dipvalue name="Off" value="64" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW4" mask="128">
+			<dipvalue name="Off" value="128" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Minimum Bet" tag="SW2" mask="3">
+			<dipvalue name="1" value="3" default="yes"/>
+			<dipvalue name="5" value="2"/>
+			<dipvalue name="10" value="1"/>
+			<dipvalue name="20" value="0"/>
+		</dipswitch>
+		<dipswitch name="Max Bet" tag="SW2" mask="12">
+			<dipvalue name="8" value="0"/>
+			<dipvalue name="10" value="8"/>
+			<dipvalue name="40" value="4"/>
+			<dipvalue name="50" value="12" default="yes"/>
+		</dipswitch>
+		<dipswitch name="Jokers" tag="SW2" mask="16">
+			<dipvalue name="No" value="16" default="yes"/>
+			<dipvalue name="Yes" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW2" mask="32">
+			<dipvalue name="Off" value="32" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Demo Sounds" tag="SW2" mask="64">
+			<dipvalue name="Off" value="64"/>
+			<dipvalue name="On" value="0" default="yes"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW2" mask="128">
+			<dipvalue name="Off" value="128" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Main Game Rate" tag="SW3" mask="7">
+			<dipvalue name="87%" value="0"/>
+			<dipvalue name="89%" value="1"/>
+			<dipvalue name="91%" value="2"/>
+			<dipvalue name="93%" value="3"/>
+			<dipvalue name="95%" value="4"/>
+			<dipvalue name="97%" value="7" default="yes"/>
+			<dipvalue name="99%" value="5"/>
+			<dipvalue name="101%" value="6"/>
+		</dipswitch>
+		<dipswitch name="Double-Up Rate" tag="SW3" mask="56">
+			<dipvalue name="82" value="0"/>
+			<dipvalue name="84" value="8"/>
+			<dipvalue name="86" value="16"/>
+			<dipvalue name="88" value="24"/>
+			<dipvalue name="90" value="32"/>
+			<dipvalue name="92" value="56" default="yes"/>
+			<dipvalue name="94" value="40"/>
+			<dipvalue name="96" value="48"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW3" mask="64">
+			<dipvalue name="Off" value="64" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW3" mask="128">
+			<dipvalue name="Off" value="128" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Coinage" tag="SW1" mask="7">
+			<dipvalue name="1 Coin/1 Credit" value="6"/>
+			<dipvalue name="1 Coin/2 Credits" value="5"/>
+			<dipvalue name="1 Coin/5 Credits" value="4"/>
+			<dipvalue name="1 Coin / 10 Credits" value="7" default="yes"/>
+			<dipvalue name="1 Coin / 20 Credits" value="3"/>
+			<dipvalue name="1 Coin / 25 Credits" value="2"/>
+			<dipvalue name="1 Coin / 50 Credits" value="1"/>
+			<dipvalue name="1 Coin / 100 Credits" value="0"/>
+		</dipswitch>
+		<dipswitch name="Remote Credits" tag="SW1" mask="56">
+			<dipvalue name="1 Pulse / 1 Credits" value="48"/>
+			<dipvalue name="1 Pulse / 2 Credits" value="40"/>
+			<dipvalue name="1 Pulse / 5 Credits" value="32"/>
+			<dipvalue name="1 Pulse / 10 Credits" value="24"/>
+			<dipvalue name="1 Pulse / 50 Credits" value="16"/>
+			<dipvalue name="1 Pulse / 100 Credits" value="56" default="yes"/>
+			<dipvalue name="1 Pulse / 200 Credits" value="8"/>
+			<dipvalue name="1 Pulse / 500 Credits" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW1" mask="64">
+			<dipvalue name="Off" value="64" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW1" mask="128">
+			<dipvalue name="Off" value="128" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<port tag=":INB">
+		</port>
+		<port tag=":SW4">
+		</port>
+		<port tag=":SW2">
+		</port>
+		<port tag=":INA">
+		</port>
+		<port tag=":SW3">
+		</port>
+		<port tag=":INC">
+		</port>
+		<port tag=":SW1">
+		</port>
+		<driver status="good" emulation="good" color="good" sound="good" graphic="good" savestate="unsupported"/>
+	</machine>
+	<machine name="victor6a" sourcefile="subsino.cpp" cloneof="victor6" romof="victor6">
+		<description>Victor 6 (v2.3)</description>
+		<year>1995</year>
+		<manufacturer>American Alpha</manufacturer>
+		<rom name="victor_6ii_alpha_1_ver2.3.u18" size="65536" crc="2a3eaecd" sha1="18bf2dfec8cd5690d6465f750093942afda66475" region="maincpu" offset="a000"/>
+		<rom name="victor_6ii-rom_3_ver1.0.u16" merge="victor_6ii-rom_3_ver1.0.u16" size="131072" crc="4e96c30a" sha1="4989b10a52ba61459864aa44be9ebafe68b4d231" region="tilemap" offset="0"/>
+		<rom name="victor_6ii-rom_2_ver1.0.u17" merge="victor_6ii-rom_2_ver1.0.u17" size="131072" crc="4630a1da" sha1="a14df7d7047350a7b1ae485570869d9fa50a2f6d" region="tilemap" offset="20000"/>
+		<rom name="victor_6ii-rom_4_ver1.0.u54" merge="victor_6ii-rom_4_ver1.0.u54" size="131072" crc="ed2a6ff8" sha1="b776b85a350cd0176ffa04248084475d07ac5bfa" region="oki" offset="0"/>
+		<rom name="n82s129.u11" merge="n82s129.u11" size="256" crc="e8d7c8c3" sha1="26ea907e45e70269956f842817b2d827cbc647ec" region="proms" offset="0"/>
+		<rom name="n82s129.u12" merge="n82s129.u12" size="256" crc="4cee9225" sha1="bb784ff636f90de3965272021f610abb41e0d40d" region="proms" offset="100"/>
+		<rom name="n82s129.u13" merge="n82s129.u13" size="256" crc="b135c3eb" sha1="54b04c5c4eb3a769123f2630740f0575e2ea6ff2" region="proms" offset="200"/>
+		<device_ref name="z180"/>
+		<device_ref name="ticket_dispenser"/>
+		<device_ref name="screen"/>
+		<device_ref name="gfxdecode"/>
+		<device_ref name="palette"/>
+		<device_ref name="speaker"/>
+		<device_ref name="ym3812"/>
+		<device_ref name="okim6295"/>
+		<chip type="cpu" tag="maincpu" name="Z180" clock="1500000"/>
+		<chip type="audio" tag="mono" name="Speaker"/>
+		<chip type="audio" tag="ymsnd" name="YM3812" clock="3579545"/>
+		<chip type="audio" tag="oki" name="OKI6295" clock="1108404"/>
+		<display tag="screen" type="raster" rotate="0" width="512" height="224" refresh="60.000000" />
+		<sound channels="1"/>
+		<input players="1" coins="1" service="yes">
+			<control type="gambling" buttons="8"/>
+		</input>
+		<dipswitch name="Unknown" tag="SW4" mask="1">
+			<dipvalue name="Off" value="1" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW4" mask="2">
+			<dipvalue name="Off" value="2" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW4" mask="4">
+			<dipvalue name="Off" value="4" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW4" mask="8">
+			<dipvalue name="Off" value="8" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW4" mask="16">
+			<dipvalue name="Off" value="16" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW4" mask="32">
+			<dipvalue name="Off" value="32" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW4" mask="64">
+			<dipvalue name="Off" value="64" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW4" mask="128">
+			<dipvalue name="Off" value="128" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Minimum Bet" tag="SW2" mask="3">
+			<dipvalue name="1" value="3" default="yes"/>
+			<dipvalue name="5" value="2"/>
+			<dipvalue name="10" value="1"/>
+			<dipvalue name="20" value="0"/>
+		</dipswitch>
+		<dipswitch name="Max Bet" tag="SW2" mask="12">
+			<dipvalue name="10" value="8"/>
+			<dipvalue name="40" value="4"/>
+			<dipvalue name="50" value="12" default="yes"/>
+			<dipvalue name="80" value="0"/>
+		</dipswitch>
+		<dipswitch name="Jokers" tag="SW2" mask="16">
+			<dipvalue name="No" value="16" default="yes"/>
+			<dipvalue name="Yes" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW2" mask="32">
+			<dipvalue name="Off" value="32" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Demo Sounds" tag="SW2" mask="64">
+			<dipvalue name="Off" value="64"/>
+			<dipvalue name="On" value="0" default="yes"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW2" mask="128">
+			<dipvalue name="Off" value="128" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Main Game Rate" tag="SW3" mask="7">
+			<dipvalue name="94%" value="0"/>
+			<dipvalue name="95%" value="1"/>
+			<dipvalue name="96%" value="2"/>
+			<dipvalue name="97%" value="3"/>
+			<dipvalue name="98%" value="4"/>
+			<dipvalue name="99%" value="7" default="yes"/>
+			<dipvalue name="100%" value="5"/>
+			<dipvalue name="101%" value="6"/>
+		</dipswitch>
+		<dipswitch name="Double-Up Rate" tag="SW3" mask="56">
+			<dipvalue name="82" value="0"/>
+			<dipvalue name="84" value="8"/>
+			<dipvalue name="86" value="16"/>
+			<dipvalue name="88" value="24"/>
+			<dipvalue name="90" value="32"/>
+			<dipvalue name="92" value="56" default="yes"/>
+			<dipvalue name="94" value="40"/>
+			<dipvalue name="96" value="48"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW3" mask="64">
+			<dipvalue name="Off" value="64" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW3" mask="128">
+			<dipvalue name="Off" value="128" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Coinage" tag="SW1" mask="7">
+			<dipvalue name="1 Coin/1 Credit" value="6"/>
+			<dipvalue name="1 Coin/2 Credits" value="5"/>
+			<dipvalue name="1 Coin/5 Credits" value="4"/>
+			<dipvalue name="1 Coin / 10 Credits" value="7" default="yes"/>
+			<dipvalue name="1 Coin / 20 Credits" value="3"/>
+			<dipvalue name="1 Coin / 25 Credits" value="2"/>
+			<dipvalue name="1 Coin / 50 Credits" value="1"/>
+			<dipvalue name="1 Coin / 100 Credits" value="0"/>
+		</dipswitch>
+		<dipswitch name="Remote Credits" tag="SW1" mask="56">
+			<dipvalue name="1 Pulse / 1 Credits" value="48"/>
+			<dipvalue name="1 Pulse / 2 Credits" value="40"/>
+			<dipvalue name="1 Pulse / 5 Credits" value="32"/>
+			<dipvalue name="1 Pulse / 10 Credits" value="24"/>
+			<dipvalue name="1 Pulse / 50 Credits" value="16"/>
+			<dipvalue name="1 Pulse / 100 Credits" value="56" default="yes"/>
+			<dipvalue name="1 Pulse / 200 Credits" value="8"/>
+			<dipvalue name="1 Pulse / 500 Credits" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW1" mask="64">
+			<dipvalue name="Off" value="64" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW1" mask="128">
+			<dipvalue name="Off" value="128" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<port tag=":INB">
+		</port>
+		<port tag=":SW4">
+		</port>
+		<port tag=":SW2">
+		</port>
+		<port tag=":INA">
+		</port>
+		<port tag=":SW3">
+		</port>
+		<port tag=":INC">
+		</port>
+		<port tag=":SW1">
+		</port>
+		<driver status="good" emulation="good" color="good" sound="good" graphic="good" savestate="unsupported"/>
+	</machine>
+	<machine name="victor6b" sourcefile="subsino.cpp" cloneof="victor6" romof="victor6">
+		<description>Victor 6 (v1.2)</description>
+		<year>1995</year>
+		<manufacturer>American Alpha</manufacturer>
+		<rom name="victor_6ii_rom_1_ver1.2.u18" size="65536" crc="309876fc" sha1="305c4cf347b512607e2c58a580075a34b48bedd5" region="maincpu" offset="a000"/>
+		<rom name="victor_6ii-rom_3_ver1.0.u16" merge="victor_6ii-rom_3_ver1.0.u16" size="131072" crc="4e96c30a" sha1="4989b10a52ba61459864aa44be9ebafe68b4d231" region="tilemap" offset="0"/>
+		<rom name="victor_6ii-rom_2_ver1.0.u17" merge="victor_6ii-rom_2_ver1.0.u17" size="131072" crc="4630a1da" sha1="a14df7d7047350a7b1ae485570869d9fa50a2f6d" region="tilemap" offset="20000"/>
+		<rom name="victor_6ii-rom_4_ver1.0.u54" merge="victor_6ii-rom_4_ver1.0.u54" size="131072" crc="ed2a6ff8" sha1="b776b85a350cd0176ffa04248084475d07ac5bfa" region="oki" offset="0"/>
+		<rom name="n82s129.u11" merge="n82s129.u11" size="256" crc="e8d7c8c3" sha1="26ea907e45e70269956f842817b2d827cbc647ec" region="proms" offset="0"/>
+		<rom name="n82s129.u12" merge="n82s129.u12" size="256" crc="4cee9225" sha1="bb784ff636f90de3965272021f610abb41e0d40d" region="proms" offset="100"/>
+		<rom name="n82s129.u13" merge="n82s129.u13" size="256" crc="b135c3eb" sha1="54b04c5c4eb3a769123f2630740f0575e2ea6ff2" region="proms" offset="200"/>
+		<device_ref name="z180"/>
+		<device_ref name="ticket_dispenser"/>
+		<device_ref name="screen"/>
+		<device_ref name="gfxdecode"/>
+		<device_ref name="palette"/>
+		<device_ref name="speaker"/>
+		<device_ref name="ym3812"/>
+		<device_ref name="okim6295"/>
+		<chip type="cpu" tag="maincpu" name="Z180" clock="1500000"/>
+		<chip type="audio" tag="mono" name="Speaker"/>
+		<chip type="audio" tag="ymsnd" name="YM3812" clock="3579545"/>
+		<chip type="audio" tag="oki" name="OKI6295" clock="1108404"/>
+		<display tag="screen" type="raster" rotate="0" width="512" height="224" refresh="60.000000" />
+		<sound channels="1"/>
+		<input players="1" coins="1" service="yes">
+			<control type="gambling" buttons="8"/>
+		</input>
+		<dipswitch name="Unknown" tag="SW4" mask="1">
+			<dipvalue name="Off" value="1" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW4" mask="2">
+			<dipvalue name="Off" value="2" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW4" mask="4">
+			<dipvalue name="Off" value="4" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW4" mask="8">
+			<dipvalue name="Off" value="8" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW4" mask="16">
+			<dipvalue name="Off" value="16" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW4" mask="32">
+			<dipvalue name="Off" value="32" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW4" mask="64">
+			<dipvalue name="Off" value="64" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW4" mask="128">
+			<dipvalue name="Off" value="128" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Minimum Bet" tag="SW2" mask="3">
+			<dipvalue name="1" value="3" default="yes"/>
+			<dipvalue name="5" value="2"/>
+			<dipvalue name="10" value="1"/>
+			<dipvalue name="20" value="0"/>
+		</dipswitch>
+		<dipswitch name="Max Bet" tag="SW2" mask="12">
+			<dipvalue name="Invalid" value="8"/>
+			<dipvalue name="40" value="4"/>
+			<dipvalue name="50" value="12" default="yes"/>
+			<dipvalue name="80" value="0"/>
+		</dipswitch>
+		<dipswitch name="Jokers" tag="SW2" mask="16">
+			<dipvalue name="No" value="16" default="yes"/>
+			<dipvalue name="Yes" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW2" mask="32">
+			<dipvalue name="Off" value="32" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Demo Sounds" tag="SW2" mask="64">
+			<dipvalue name="Off" value="64"/>
+			<dipvalue name="On" value="0" default="yes"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW2" mask="128">
+			<dipvalue name="Off" value="128" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Main Game Rate" tag="SW3" mask="7">
+			<dipvalue name="94%" value="0"/>
+			<dipvalue name="95%" value="1"/>
+			<dipvalue name="96%" value="2"/>
+			<dipvalue name="97%" value="3"/>
+			<dipvalue name="98%" value="4"/>
+			<dipvalue name="99%" value="7" default="yes"/>
+			<dipvalue name="100%" value="5"/>
+			<dipvalue name="101%" value="6"/>
+		</dipswitch>
+		<dipswitch name="Double-Up Rate" tag="SW3" mask="56">
+			<dipvalue name="82" value="0"/>
+			<dipvalue name="84" value="8"/>
+			<dipvalue name="86" value="16"/>
+			<dipvalue name="88" value="24"/>
+			<dipvalue name="90" value="32"/>
+			<dipvalue name="92" value="56" default="yes"/>
+			<dipvalue name="94" value="40"/>
+			<dipvalue name="96" value="48"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW3" mask="64">
+			<dipvalue name="Off" value="64" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW3" mask="128">
+			<dipvalue name="Off" value="128" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Coinage" tag="SW1" mask="7">
+			<dipvalue name="1 Coin/1 Credit" value="6"/>
+			<dipvalue name="1 Coin/2 Credits" value="5"/>
+			<dipvalue name="1 Coin/5 Credits" value="4"/>
+			<dipvalue name="1 Coin / 10 Credits" value="7" default="yes"/>
+			<dipvalue name="1 Coin / 20 Credits" value="3"/>
+			<dipvalue name="1 Coin / 25 Credits" value="2"/>
+			<dipvalue name="1 Coin / 50 Credits" value="1"/>
+			<dipvalue name="1 Coin / 100 Credits" value="0"/>
+		</dipswitch>
+		<dipswitch name="Remote Credits" tag="SW1" mask="56">
+			<dipvalue name="1 Pulse / 1 Credits" value="48"/>
+			<dipvalue name="1 Pulse / 2 Credits" value="40"/>
+			<dipvalue name="1 Pulse / 5 Credits" value="32"/>
+			<dipvalue name="1 Pulse / 10 Credits" value="24"/>
+			<dipvalue name="1 Pulse / 50 Credits" value="16"/>
+			<dipvalue name="1 Pulse / 100 Credits" value="56" default="yes"/>
+			<dipvalue name="1 Pulse / 200 Credits" value="8"/>
+			<dipvalue name="1 Pulse / 500 Credits" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW1" mask="64">
+			<dipvalue name="Off" value="64" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<dipswitch name="Unknown" tag="SW1" mask="128">
+			<dipvalue name="Off" value="128" default="yes"/>
+			<dipvalue name="On" value="0"/>
+		</dipswitch>
+		<port tag=":INB">
+		</port>
+		<port tag=":SW4">
+		</port>
+		<port tag=":SW2">
+		</port>
+		<port tag=":INA">
+		</port>
+		<port tag=":SW3">
+		</port>
+		<port tag=":INC">
+		</port>
+		<port tag=":SW1">
+		</port>
+		<driver status="good" emulation="good" color="good" sound="good" graphic="good" savestate="unsupported"/>
+	</machine>
+	<machine name="victor9k" sourcefile="victor9k.cpp">
+		<description>Victor 9000</description>
+		<year>1982</year>
+		<manufacturer>Victor Business Products</manufacturer>
+		<biosset name="old" description="Older"/>
+		<biosset name="univ" description="Universal" default="yes"/>
+		<rom name="102320.7j" bios="old" size="4096" crc="3d615fd7" sha1="b22f7e5d66404185395d8effbf57efded0079a92" region="8l" offset="0"/>
+		<rom name="102322.8j" bios="old" size="4096" crc="9209df0e" sha1="3ee8e0c15186bbd5768b550ecc1fa3b6b1dbb928" region="8l" offset="1000"/>
+		<rom name="v9000 univ. fe f3f7 13db.7j" bios="univ" size="4096" crc="25c7a59f" sha1="8784e9aa7eb9439f81e18b8e223c94714e033911" region="8l" offset="0"/>
+		<rom name="v9000 univ. ff f3f7 39fe.8j" bios="univ" size="4096" crc="496c7467" sha1="eccf428f62ef94ab85f4a43ba59ae6a066244a66" region="8l" offset="1000"/>
+		<device_ref name="i8088"/>
+		<device_ref name="screen"/>
+		<device_ref name="palette"/>
+		<device_ref name="hd6845"/>
+		<device_ref name="speaker"/>
+		<device_ref name="hc55516"/>
+		<device_ref name="ieee488"/>
+		<device_ref name="pit8259"/>
+		<device_ref name="pit8253"/>
+		<device_ref name="upd7201"/>
+		<device_ref name="z80dart_channel"/>
+		<device_ref name="z80dart_channel"/>
+		<device_ref name="mc6852"/>
+		<device_ref name="via6522"/>
+		<device_ref name="via6522"/>
+		<device_ref name="via6522"/>
+		<device_ref name="centronics"/>
+		<device_ref name="centronics_printer"/>
+		<device_ref name="printer_image"/>
+		<device_ref name="rs232"/>
+		<device_ref name="rs232"/>
+		<device_ref name="victor9kb"/>
+		<device_ref name="i8021"/>
+		<device_ref name="victor9k_fdc"/>
+		<device_ref name="i8048"/>
+		<device_ref name="floppy_connector"/>
+		<device_ref name="floppy_525_qd"/>
+		<device_ref name="speaker"/>
+		<device_ref name="flopsnd"/>
+		<device_ref name="floppy_connector"/>
+		<device_ref name="floppy_525_qd"/>
+		<device_ref name="speaker"/>
+		<device_ref name="flopsnd"/>
+		<device_ref name="via6522"/>
+		<device_ref name="via6522"/>
+		<device_ref name="via6522"/>
+		<device_ref name="ram"/>
+		<device_ref name="software_list"/>
+		<chip type="cpu" tag="8l" name="I8088" clock="5000000"/>
+		<chip type="cpu" tag="kb:z3" name="I8021" clock="3579545"/>
+		<chip type="cpu" tag="fdc:5d" name="I8048" clock="5000000"/>
+		<chip type="audio" tag="mono" name="Speaker"/>
+		<chip type="audio" tag="15c" name="HC-55516" clock="100000"/>
+		<chip type="audio" tag="fdc:5d:0:525qd:flopsndout" name="Speaker"/>
+		<chip type="audio" tag="fdc:5d:0:525qd:floppysound" name="Floppy sound" clock="44100"/>
+		<chip type="audio" tag="fdc:5d:1:525qd:flopsndout" name="Speaker"/>
+		<chip type="audio" tag="fdc:5d:1:525qd:floppysound" name="Floppy sound" clock="44100"/>
+		<display tag="screen" type="raster" rotate="0" width="640" height="480" refresh="50.000000" />
+		<sound channels="3"/>
+		<input players="1">
+			<control type="keyboard" buttons="104"/>
+		</input>
+		<port tag=":kb:YA">
+		</port>
+		<port tag=":kb:Y6">
+		</port>
+		<port tag=":kb:Y8">
+		</port>
+		<port tag=":kb:YB">
+		</port>
+		<port tag=":kb:Y2">
+		</port>
+		<port tag=":kb:Y5">
+		</port>
+		<port tag=":kb:Y4">
+		</port>
+		<port tag=":kb:Y9">
+		</port>
+		<port tag=":kb:Y7">
+		</port>
+		<port tag=":kb:YC">
+		</port>
+		<port tag=":kb:Y3">
+		</port>
+		<port tag=":kb:Y1">
+		</port>
+		<port tag=":kb:Y0">
+		</port>
+		<driver status="preliminary" emulation="preliminary" color="good" sound="good" graphic="good" savestate="unsupported"/>
+		<device type="printer" tag="centronics:printer:printer">
+			<instance name="printer" briefname="prin"/>
+			<extension name="prn"/>
+		</device>
+		<device type="floppydisk" tag="fdc:5d:0:525qd" interface="floppy_5_25">
+			<instance name="floppydisk1" briefname="flop1"/>
+			<extension name="img"/>
+			<extension name="d77"/>
+			<extension name="d88"/>
+			<extension name="1dd"/>
+			<extension name="dfi"/>
+			<extension name="imd"/>
+			<extension name="ipf"/>
+			<extension name="mfi"/>
+			<extension name="mfm"/>
+			<extension name="td0"/>
+			<extension name="cqm"/>
+			<extension name="cqi"/>
+			<extension name="dsk"/>
+		</device>
+		<device type="floppydisk" tag="fdc:5d:1:525qd" interface="floppy_5_25">
+			<instance name="floppydisk2" briefname="flop2"/>
+			<extension name="img"/>
+			<extension name="d77"/>
+			<extension name="d88"/>
+			<extension name="1dd"/>
+			<extension name="dfi"/>
+			<extension name="imd"/>
+			<extension name="ipf"/>
+			<extension name="mfi"/>
+			<extension name="mfm"/>
+			<extension name="td0"/>
+			<extension name="cqm"/>
+			<extension name="cqi"/>
+			<extension name="dsk"/>
+		</device>
+		<slot name="centronics">
+			<slotoption name="covox_stereo" devname="covox_stereo"/>
+			<slotoption name="covox" devname="covox"/>
+			<slotoption name="printer" devname="centronics_printer" default="yes"/>
+			<slotoption name="p72" devname="p72"/>
+			<slotoption name="ap2000" devname="ap2000"/>
+			<slotoption name="lx810l" devname="lx810l"/>
+			<slotoption name="lx800" devname="lx800"/>
+			<slotoption name="ex800" devname="ex800"/>
+			<slotoption name="pl80" devname="comx_pl80"/>
+		</slot>
+		<slot name="rs232a">
+			<slotoption name="pty" devname="pseudo_terminal"/>
+			<slotoption name="terminal" devname="serial_terminal"/>
+			<slotoption name="null_modem" devname="null_modem"/>
+			<slotoption name="loopback" devname="rs232_loopback"/>
+			<slotoption name="printer" devname="serial_printer"/>
+			<slotoption name="keyboard" devname="serial_keyboard"/>
+		</slot>
+		<slot name="rs232b">
+			<slotoption name="pty" devname="pseudo_terminal"/>
+			<slotoption name="terminal" devname="serial_terminal"/>
+			<slotoption name="null_modem" devname="null_modem"/>
+			<slotoption name="loopback" devname="rs232_loopback"/>
+			<slotoption name="printer" devname="serial_printer"/>
+			<slotoption name="keyboard" devname="serial_keyboard"/>
+		</slot>
+		<slot name="fdc:5d:0">
+			<slotoption name="525qd" devname="floppy_525_qd" default="yes"/>
+			<slotoption name="525ssqd" devname="floppy_525_ssqd"/>
+		</slot>
+		<slot name="fdc:5d:1">
+			<slotoption name="525qd" devname="floppy_525_qd" default="yes"/>
+			<slotoption name="525ssqd" devname="floppy_525_ssqd"/>
+		</slot>
+		<softwarelist name="victor9k_flop" status="original" />
+		<ramoption default="1">131072</ramoption>
+	</machine>
+	<machine name="victorba" sourcefile="victory.cpp" cloneof="victory" romof="victory">
+		<description>Victor Banana</description>
+		<year>1982</year>
+		<manufacturer>Exidy</manufacturer>
+		<rom name="j2.rom" size="4096" crc="dd788e93" sha1="5912488a3631afd522f5336c297752bad2e0f7b6" region="maincpu" offset="0"/>
+		<rom name="k2.rom" size="4096" crc="f47bf046" sha1="9e15eeee2729a8466e2c70d61cfa7c86e0ceeaf8" region="maincpu" offset="1000"/>
+		<rom name="kl2.rom" size="4096" crc="baef885e" sha1="b252d35c19b9def6bd695509fca409b7fbd693c1" region="maincpu" offset="2000"/>
+		<rom name="l2.rom" size="4096" crc="739e4799" sha1="7c36e15b7a1b01b28802396e7f680e77cc09064a" region="maincpu" offset="3000"/>
+		<rom name="m2.rom" size="4096" crc="a88185e6" sha1="1c8b270ae9cbfbb5930a07bb40d5498dd0b0547c" region="maincpu" offset="4000"/>
+		<rom name="n2.rom" size="4096" crc="6724eb01" sha1="4972643e6bd7d3a286478c378c8bf5dd26b782a8" region="maincpu" offset="5000"/>
+		<rom name="p2.rom" size="4096" crc="2cf34ad7" sha1="51df13bc9f6e8541107bac3bea234ccddcdde6f5" region="maincpu" offset="6000"/>
+		<rom name="t2.rom" size="4096" crc="89bb0359" sha1="8eedb421b14562c00017914fadc97a10af232b51" region="maincpu" offset="7000"/>
+		<rom name="j1.rom" size="4096" crc="5e415084" sha1="fda2355ebb0f39ba14e0f6578fe6699c493257bf" region="maincpu" offset="8000"/>
+		<rom name="k1.rom" size="4096" crc="3f327dff" sha1="294d2fac8c09ece4fc190ab7305a63149eabb561" region="maincpu" offset="9000"/>
+		<rom name="kl1.rom" size="4096" crc="6c82ebca" sha1="3f30e92cbdca73948d285d4509bdee85d8fa57b7" region="maincpu" offset="a000"/>
+		<rom name="l1.rom" size="4096" crc="03b89d8a" sha1="37b501e910d3c3784a6696fab7fd6ba568470a8b" region="maincpu" offset="b000"/>
+		<rom name="vic1.7bc" merge="vic1.7bc" size="4096" crc="d4927560" sha1="f263419dec70b758cf429cd7e5b388258027bfde" region="audiocpu" offset="c000"/>
+		<rom name="vic1.7c" merge="vic1.7c" size="4096" crc="059efab5" sha1="60259eb56a282a0fbab5e966a16430ab486b1492" region="audiocpu" offset="d000"/>
+		<rom name="vic1.7d" merge="vic1.7d" size="4096" crc="82c4767c" sha1="64eac78e7dab5f435eb035be46e24e73a74f0eae" region="audiocpu" offset="e000"/>
+		<rom name="vic1.7e" merge="vic1.7e" size="4096" crc="a19be034" sha1="1f0b751d8a5fbced4942ac3222e1444ce056b378" region="audiocpu" offset="f000"/>
+		<rom name="hsc17l" merge="hsc17l" size="256" crc="b2c75dee" sha1="7ad8f7fac3979a76f64f2b761cd1a8f5d8f44983" region="proms" offset="0"/>
+		<rom name="hsc13e" merge="hsc13e" size="32" crc="a107c4f5" sha1="c70395cac20ce0f18b172e623b4d3ba9176fde1e" region="proms" offset="100"/>
+		<rom name="hsc16a" merge="hsc16a" size="32" crc="5f06ad26" sha1="90c0837a5b305f1909bd82ae4db3516beb7a772a" region="proms" offset="120"/>
+		<rom name="hsc19b" merge="hsc19b" size="32" crc="86165f1e" sha1="4a14100860a7840aae24e96d15966e7d2fab85c0" region="proms" offset="140"/>
+		<rom name="hsc19c" merge="hsc19c" size="32" crc="fd27a57a" sha1="c00aaae281bf5969b7ac5acebfaaf52d93b7e6c9" region="proms" offset="160"/>
+		<rom name="hsc19d" merge="hsc19d" size="32" crc="09c4dbf6" sha1="d5aa347d51d22b83dff3280b761a7ec8be34c3f8" region="proms" offset="180"/>
+		<rom name="hsc19e" merge="hsc19e" size="32" crc="ce1464f4" sha1="2d185471bd9d12af7075670a7d994b74921dc539" region="proms" offset="1a0"/>
+		<rom name="3j" merge="3j" size="32" crc="5fb6b158" sha1="0fdb235ea00546117018fe998e7de247dd018a31" region="proms" offset="1c0"/>
+		<device_ref name="z80"/>
+		<device_ref name="nvram"/>
+		<device_ref name="screen"/>
+		<device_ref name="palette"/>
+		<device_ref name="m6502"/>
+		<device_ref name="riot6532"/>
+		<device_ref name="pia6821"/>
+		<device_ref name="speaker"/>
+		<device_ref name="victory_sound"/>
+		<device_ref name="tms5220"/>
+		<chip type="cpu" tag="maincpu" name="Z80" clock="4000000"/>
+		<chip type="cpu" tag="audiocpu" name="M6502" clock="894886"/>
+		<chip type="audio" tag="mono" name="Speaker"/>
+		<chip type="audio" tag="custom" name="Exidy SFX+PSG+Speech"/>
+		<chip type="audio" tag="tms" name="TMS5220" clock="640000"/>
+		<display tag="screen" type="raster" rotate="0" width="256" height="256" refresh="59.996811" pixclock="5644500" htotal="336" hbend="0" hbstart="256" vtotal="280" vbend="0" vbstart="256" />
+		<sound channels="1"/>
+		<input players="1" coins="3">
+			<control type="dial" buttons="4" minimum="0" maximum="255" sensitivity="25" keydelta="10" reverse="yes"/>
+		</input>
+		<dipswitch name="????" tag="SW2" mask="7">
+			<dipvalue name="0" value="0" default="yes"/>
+			<dipvalue name="1" value="1"/>
+			<dipvalue name="2" value="2"/>
+			<dipvalue name="3" value="3"/>
+			<dipvalue name="4" value="4"/>
+			<dipvalue name="5" value="5"/>
+			<dipvalue name="6" value="6"/>
+			<dipvalue name="7" value="7"/>
+		</dipswitch>
+		<dipswitch name="Refresh" tag="SW2" mask="128">
+			<dipvalue name="60 Hz" value="0" default="yes"/>
+			<dipvalue name="50 Hz" value="128"/>
+		</dipswitch>
+		<port tag=":UNUSED">
+		</port>
+		<port tag=":BUTTONS">
+		</port>
+		<port tag=":COIN">
+		</port>
+		<port tag=":DIAL">
+			<analog mask="255"/>
+		</port>
+		<port tag=":SW1">
+		</port>
+		<port tag=":SW2">
+		</port>
+		<driver status="good" emulation="good" color="good" sound="good" graphic="good" savestate="supported"/>
+	</machine>
+	<machine name="victory" sourcefile="victory.cpp">
+		<description>Victory</description>
+		<year>1982</year>
+		<manufacturer>Exidy</manufacturer>
+		<rom name="vic3.j2" size="4096" crc="4b614440" sha1="3a91d273c0c936af955c491e1faadf17e4469ed5" region="maincpu" offset="0"/>
+		<rom name="vic3.k2" size="4096" crc="9f9eb12b" sha1="8833cc6b862ccecdac65c6f2f7e56c74a83c7d58" region="maincpu" offset="1000"/>
+		<rom name="vic3.kl2" size="4096" crc="a0db4bf9" sha1="105f983a2ee6628d97d6207f5c04fc7de2c2d430" region="maincpu" offset="2000"/>
+		<rom name="vic3.l2" size="4096" crc="69855b46" sha1="ce13eb4c1abf6b301e781e519c482788f7a8e2c6" region="maincpu" offset="3000"/>
+		<rom name="vic3.m2" size="4096" crc="1ddbe9d4" sha1="286e5b045cd4da286bc3f99a4ad1244971ab8b26" region="maincpu" offset="4000"/>
+		<rom name="vic3.n2" size="4096" crc="dbb53f1f" sha1="745aa3465e600908d6b6d2fb8d939573e5689944" region="maincpu" offset="5000"/>
+		<rom name="vic3.p2" size="4096" crc="9959e1c4" sha1="9125d3127a823326d9a9ffd5e121e188c017e596" region="maincpu" offset="6000"/>
+		<rom name="vic3.t2" size="4096" crc="8f1b997a" sha1="1912b6592bbdd615cedddb6efce9c2b1b5c5b3f8" region="maincpu" offset="7000"/>
+		<rom name="vic3.j1" size="4096" crc="27e9e87b" sha1="edf2dc450b7e6116aff6cb9dc4f35ebd541f963f" region="maincpu" offset="8000"/>
+		<rom name="vic3.k1" size="4096" crc="418d9b80" sha1="3a4faee8b6f201ae0504080641afde4d0303c5a9" region="maincpu" offset="9000"/>
+		<rom name="vic3.kl1" size="4096" crc="2b7e626f" sha1="5a607faf05f81da44c68fe1a6efe2a7c4ac048c7" region="maincpu" offset="a000"/>
+		<rom name="vic3.l1" size="4096" crc="7bb8e1f5" sha1="0f624e859bb9c2203c0aebe89ac2f807b4fa9a47" region="maincpu" offset="b000"/>
+		<rom name="vic1.7bc" size="4096" crc="d4927560" sha1="f263419dec70b758cf429cd7e5b388258027bfde" region="audiocpu" offset="c000"/>
+		<rom name="vic1.7c" size="4096" crc="059efab5" sha1="60259eb56a282a0fbab5e966a16430ab486b1492" region="audiocpu" offset="d000"/>
+		<rom name="vic1.7d" size="4096" crc="82c4767c" sha1="64eac78e7dab5f435eb035be46e24e73a74f0eae" region="audiocpu" offset="e000"/>
+		<rom name="vic1.7e" size="4096" crc="a19be034" sha1="1f0b751d8a5fbced4942ac3222e1444ce056b378" region="audiocpu" offset="f000"/>
+		<rom name="hsc17l" size="256" crc="b2c75dee" sha1="7ad8f7fac3979a76f64f2b761cd1a8f5d8f44983" region="proms" offset="0"/>
+		<rom name="hsc13e" size="32" crc="a107c4f5" sha1="c70395cac20ce0f18b172e623b4d3ba9176fde1e" region="proms" offset="100"/>
+		<rom name="hsc16a" size="32" crc="5f06ad26" sha1="90c0837a5b305f1909bd82ae4db3516beb7a772a" region="proms" offset="120"/>
+		<rom name="hsc19b" size="32" crc="86165f1e" sha1="4a14100860a7840aae24e96d15966e7d2fab85c0" region="proms" offset="140"/>
+		<rom name="hsc19c" size="32" crc="fd27a57a" sha1="c00aaae281bf5969b7ac5acebfaaf52d93b7e6c9" region="proms" offset="160"/>
+		<rom name="hsc19d" size="32" crc="09c4dbf6" sha1="d5aa347d51d22b83dff3280b761a7ec8be34c3f8" region="proms" offset="180"/>
+		<rom name="hsc19e" size="32" crc="ce1464f4" sha1="2d185471bd9d12af7075670a7d994b74921dc539" region="proms" offset="1a0"/>
+		<rom name="3j" size="32" crc="5fb6b158" sha1="0fdb235ea00546117018fe998e7de247dd018a31" region="proms" offset="1c0"/>
+		<device_ref name="z80"/>
+		<device_ref name="nvram"/>
+		<device_ref name="screen"/>
+		<device_ref name="palette"/>
+		<device_ref name="m6502"/>
+		<device_ref name="riot6532"/>
+		<device_ref name="pia6821"/>
+		<device_ref name="speaker"/>
+		<device_ref name="victory_sound"/>
+		<device_ref name="tms5220"/>
+		<chip type="cpu" tag="maincpu" name="Z80" clock="4000000"/>
+		<chip type="cpu" tag="audiocpu" name="M6502" clock="894886"/>
+		<chip type="audio" tag="mono" name="Speaker"/>
+		<chip type="audio" tag="custom" name="Exidy SFX+PSG+Speech"/>
+		<chip type="audio" tag="tms" name="TMS5220" clock="640000"/>
+		<display tag="screen" type="raster" rotate="0" width="256" height="256" refresh="59.996811" pixclock="5644500" htotal="336" hbend="0" hbstart="256" vtotal="280" vbend="0" vbstart="256" />
+		<sound channels="1"/>
+		<input players="1" coins="3">
+			<control type="dial" buttons="4" minimum="0" maximum="255" sensitivity="25" keydelta="10" reverse="yes"/>
+		</input>
+		<dipswitch name="????" tag="SW2" mask="7">
+			<dipvalue name="0" value="0" default="yes"/>
+			<dipvalue name="1" value="1"/>
+			<dipvalue name="2" value="2"/>
+			<dipvalue name="3" value="3"/>
+			<dipvalue name="4" value="4"/>
+			<dipvalue name="5" value="5"/>
+			<dipvalue name="6" value="6"/>
+			<dipvalue name="7" value="7"/>
+		</dipswitch>
+		<dipswitch name="Refresh" tag="SW2" mask="128">
+			<dipvalue name="60 Hz" value="0" default="yes"/>
+			<dipvalue name="50 Hz" value="128"/>
+		</dipswitch>
+		<port tag=":UNUSED">
+		</port>
+		<port tag=":BUTTONS">
+		</port>
+		<port tag=":COIN">
+		</port>
+		<port tag=":DIAL">
+			<analog mask="255"/>
+		</port>
+		<port tag=":SW1">
+		</port>
+		<port tag=":SW2">
+		</port>
+		<driver status="good" emulation="good" color="good" sound="good" graphic="good" savestate="supported"/>
+	</machine>
+	<machine name="victoryp" sourcefile="gts80b.cpp" ismechanical="yes" sampleof="genpin">
+		<description>Victory (Pinball)</description>
+		<year>1987</year>
+		<manufacturer>Gottlieb</manufacturer>
+		<rom name="prom2.cpu" size="2048" crc="6a42eaf4" sha1="3e28b01473266db463986a4283e1be85f2410fb1" region="maincpu" offset="1000"/>
+		<rom name="prom1.cpu" size="8192" crc="e724db90" sha1="10e760e129ce89f11372c6dd3616216d45f2c926" region="maincpu" offset="2000"/>
+		<rom name="drom1.snd" size="32768" crc="4ab6dab7" sha1="7e21e69029e60052112ddd5c7481582ea6684dc1" region="cpu3" offset="8000"/>
+		<rom name="yrom1.snd" size="32768" crc="921a100e" sha1="0c3c7eae4ceeb5a1a8150bac52203d3f1e8f917e" region="cpu2" offset="8000"/>
+		<device_ref name="m6502"/>
+		<device_ref name="nvram"/>
+		<device_ref name="riot6532"/>
+		<device_ref name="riot6532"/>
+		<device_ref name="riot6532"/>
+		<device_ref name="speaker"/>
+		<device_ref name="samples"/>
+		<device_ref name="speaker"/>
+		<sample name="bumper"/>
+		<sample name="chime1"/>
+		<sample name="chime2"/>
+		<sample name="chime3"/>
+		<sample name="chime4"/>
+		<sample name="hole"/>
+		<sample name="knocker"/>
+		<sample name="sling"/>
+		<sample name="coinin"/>
+		<sample name="outhole"/>
+		<sample name="kickback"/>
+		<sample name="drop_target_reset"/>
+		<sample name="coil_coinlockout_engage"/>
+		<sample name="coil_coinlockout_release"/>
+		<sample name="relay_engage"/>
+		<sample name="relay_release"/>
+		<sample name="solenoid_engage"/>
+		<sample name="solenoid_release"/>
+		<chip type="cpu" tag="maincpu" name="M6502" clock="894886"/>
+		<chip type="audio" tag="mechvol" name="Speaker"/>
+		<chip type="audio" tag="samples" name="Samples"/>
+		<chip type="audio" tag="mono" name="Speaker"/>
+		<sound channels="2"/>
+		<input players="1" coins="3" tilt="yes">
+		</input>
+		<dipswitch name="SW 32" tag="DSW.3" mask="1">
+			<dipvalue name="Off" value="0" default="yes"/>
+			<dipvalue name="On" value="1"/>
+		</dipswitch>
+		<dipswitch name="SW 31" tag="DSW.3" mask="2">
+			<dipvalue name="Off" value="0" default="yes"/>
+			<dipvalue name="On" value="2"/>
+		</dipswitch>
+		<dipswitch name="SW 30" tag="DSW.3" mask="4">
+			<dipvalue name="Off" value="0"/>
+			<dipvalue name="On" value="4" default="yes"/>
+		</dipswitch>
+		<dipswitch name="SW 29" tag="DSW.3" mask="8">
+			<dipvalue name="Off" value="0"/>
+			<dipvalue name="On" value="8" default="yes"/>
+		</dipswitch>
+		<dipswitch name="SW 28" tag="DSW.3" mask="16">
+			<dipvalue name="Off" value="0"/>
+			<dipvalue name="On" value="16" default="yes"/>
+		</dipswitch>
+		<dipswitch name="SW 27" tag="DSW.3" mask="32">
+			<dipvalue name="Off" value="0"/>
+			<dipvalue name="On" value="32" default="yes"/>
+		</dipswitch>
+		<dipswitch name="SW 26" tag="DSW.3" mask="64">
+			<dipvalue name="Off" value="0"/>
+			<dipvalue name="On" value="64" default="yes"/>
+		</dipswitch>
+		<dipswitch name="SW 25" tag="DSW.3" mask="128">
+			<dipvalue name="Off" value="0"/>
+			<dipvalue name="On" value="128" default="yes"/>
+		</dipswitch>
+		<dipswitch name="SW 24" tag="DSW.2" mask="1">
+			<dipvalue name="Off" value="0"/>
+			<dipvalue name="On" value="1" default="yes"/>
+		</dipswitch>
+		<dipswitch name="SW 23" tag="DSW.2" mask="2">
+			<dipvalue name="Off" value="0"/>
+			<dipvalue name="On" value="2" default="yes"/>
+		</dipswitch>
+		<dipswitch name="SW 22" tag="DSW.2" mask="4">
+			<dipvalue name="Off" value="0" default="yes"/>
+			<dipvalue name="On" value="4"/>
+		</dipswitch>
+		<dipswitch name="SW 21" tag="DSW.2" mask="8">
+			<dipvalue name="Off" value="0" default="yes"/>
+			<dipvalue name="On" value="8"/>
+		</dipswitch>
+		<dipswitch name="SW 20" tag="DSW.2" mask="16">
+			<dipvalue name="Off" value="0" default="yes"/>
+			<dipvalue name="On" value="16"/>
+		</dipswitch>
+		<dipswitch name="SW 19" tag="DSW.2" mask="32">
+			<dipvalue name="Off" value="0" default="yes"/>
+			<dipvalue name="On" value="32"/>
+		</dipswitch>
+		<dipswitch name="SW 18" tag="DSW.2" mask="64">
+			<dipvalue name="Off" value="0"/>
+			<dipvalue name="On" value="64" default="yes"/>
+		</dipswitch>
+		<dipswitch name="SW 17" tag="DSW.2" mask="128">
+			<dipvalue name="Off" value="0"/>
+			<dipvalue name="On" value="128" default="yes"/>
+		</dipswitch>
+		<dipswitch name="SW 16" tag="DSW.1" mask="1">
+			<dipvalue name="Off" value="0" default="yes"/>
+			<dipvalue name="On" value="1"/>
+		</dipswitch>
+		<dipswitch name="SW 15" tag="DSW.1" mask="2">
+			<dipvalue name="Off" value="0"/>
+			<dipvalue name="On" value="2" default="yes"/>
+		</dipswitch>
+		<dipswitch name="SW 14" tag="DSW.1" mask="4">
+			<dipvalue name="Off" value="0" default="yes"/>
+			<dipvalue name="On" value="4"/>
+		</dipswitch>
+		<dipswitch name="SW 13" tag="DSW.1" mask="8">
+			<dipvalue name="Off" value="0" default="yes"/>
+			<dipvalue name="On" value="8"/>
+		</dipswitch>
+		<dipswitch name="SW 12" tag="DSW.1" mask="16">
+			<dipvalue name="Off" value="0" default="yes"/>
+			<dipvalue name="On" value="16"/>
+		</dipswitch>
+		<dipswitch name="SW 11" tag="DSW.1" mask="32">
+			<dipvalue name="Off" value="0" default="yes"/>
+			<dipvalue name="On" value="32"/>
+		</dipswitch>
+		<dipswitch name="SW 10" tag="DSW.1" mask="64">
+			<dipvalue name="Off" value="0" default="yes"/>
+			<dipvalue name="On" value="64"/>
+		</dipswitch>
+		<dipswitch name="SW 9" tag="DSW.1" mask="128">
+			<dipvalue name="Off" value="0" default="yes"/>
+			<dipvalue name="On" value="128"/>
+		</dipswitch>
+		<dipswitch name="SW 8" tag="DSW.0" mask="1">
+			<dipvalue name="Off" value="0" default="yes"/>
+			<dipvalue name="On" value="1"/>
+		</dipswitch>
+		<dipswitch name="SW 7" tag="DSW.0" mask="2">
+			<dipvalue name="Off" value="0" default="yes"/>
+			<dipvalue name="On" value="2"/>
+		</dipswitch>
+		<dipswitch name="SW 6" tag="DSW.0" mask="4">
+			<dipvalue name="Off" value="0" default="yes"/>
+			<dipvalue name="On" value="4"/>
+		</dipswitch>
+		<dipswitch name="SW 5" tag="DSW.0" mask="8">
+			<dipvalue name="Off" value="0" default="yes"/>
+			<dipvalue name="On" value="8"/>
+		</dipswitch>
+		<dipswitch name="SW 4" tag="DSW.0" mask="16">
+			<dipvalue name="Off" value="0" default="yes"/>
+			<dipvalue name="On" value="16"/>
+		</dipswitch>
+		<dipswitch name="SW 3" tag="DSW.0" mask="32">
+			<dipvalue name="Off" value="0" default="yes"/>
+			<dipvalue name="On" value="32"/>
+		</dipswitch>
+		<dipswitch name="SW 2" tag="DSW.0" mask="64">
+			<dipvalue name="Off" value="0" default="yes"/>
+			<dipvalue name="On" value="64"/>
+		</dipswitch>
+		<dipswitch name="SW 1" tag="DSW.0" mask="128">
+			<dipvalue name="Off" value="0" default="yes"/>
+			<dipvalue name="On" value="128"/>
+		</dipswitch>
+		<port tag=":X80">
+		</port>
+		<port tag=":X40">
+		</port>
+		<port tag=":X2">
+		</port>
+		<port tag=":X4">
+		</port>
+		<port tag=":X20">
+		</port>
+		<port tag=":X10">
+		</port>
+		<port tag=":X0">
+		</port>
+		<port tag=":DSW.3">
+		</port>
+		<port tag=":DSW.2">
+		</port>
+		<port tag=":X8">
+		</port>
+		<port tag=":DSW.1">
+		</port>
+		<port tag=":X1">
+		</port>
+		<port tag=":DSW.0">
+		</port>
+		<driver status="preliminary" emulation="preliminary" color="good" sound="preliminary" graphic="good" savestate="unsupported"/>
+	</machine>
+	<machine name="z80" sourcefile="src/devices/cpu/z80/z80.cpp" isdevice="yes" runnable="no">
+		<description>Z80</description>
+	</machine>
+	<machine name="screen" sourcefile="src/emu/screen.cpp" isdevice="yes" runnable="no">
+		<description>Video Screen</description>
+	</machine>
+	<machine name="palette" sourcefile="src/emu/emupal.cpp" isdevice="yes" runnable="no">
+		<description>palette</description>
+	</machine>
+	<machine name="speaker" sourcefile="src/emu/speaker.cpp" isdevice="yes" runnable="no">
+		<description>Speaker</description>
+		<sound channels="1"/>
+	</machine>
+	<machine name="wave" sourcefile="src/devices/sound/wave.cpp" isdevice="yes" runnable="no">
+		<description>Wave</description>
+		<sound channels="0"/>
+	</machine>
+	<machine name="sn76477" sourcefile="src/devices/sound/sn76477.cpp" isdevice="yes" runnable="no">
+		<description>SN76477</description>
+		<sound channels="0"/>
+	</machine>
+	<machine name="discrete" sourcefile="src/devices/sound/discrete.cpp" isdevice="yes" runnable="no">
+		<description>DISCRETE</description>
+		<sound channels="0"/>
+	</machine>
+	<machine name="cassette_image" sourcefile="src/devices/imagedev/cassette.cpp" isdevice="yes" runnable="no">
+		<description>Cassette</description>
+	</machine>
+	<machine name="printer_image" sourcefile="src/devices/imagedev/printer.cpp" isdevice="yes" runnable="no">
+		<description>Printer</description>
+	</machine>
+	<machine name="z180" sourcefile="src/devices/cpu/z180/z180.cpp" isdevice="yes" runnable="no">
+		<description>Z180</description>
+	</machine>
+	<machine name="ticket_dispenser" sourcefile="src/mame/machine/ticket.cpp" isdevice="yes" runnable="no">
+		<description>Ticket Dispenser</description>
+	</machine>
+	<machine name="gfxdecode" sourcefile="src/emu/drawgfx.cpp" isdevice="yes" runnable="no">
+		<description>gfxdecode</description>
+	</machine>
+	<machine name="ym2413" sourcefile="src/devices/sound/2413intf.cpp" isdevice="yes" runnable="no">
+		<description>YM2413</description>
+		<sound channels="0"/>
+	</machine>
+	<machine name="okim6295" sourcefile="src/devices/sound/okim6295.cpp" isdevice="yes" runnable="no">
+		<description>OKI6295</description>
+		<sound channels="0"/>
+	</machine>
+	<machine name="ym3812" sourcefile="src/devices/sound/3812intf.cpp" isdevice="yes" runnable="no">
+		<description>YM3812</description>
+		<sound channels="0"/>
+	</machine>
+	<machine name="i8088" sourcefile="src/devices/cpu/i86/i86.cpp" isdevice="yes" runnable="no">
+		<description>I8088</description>
+	</machine>
+	<machine name="hd6845" sourcefile="src/devices/video/mc6845.cpp" isdevice="yes" runnable="no">
+		<description>HD6845 CRTC</description>
+	</machine>
+	<machine name="hc55516" sourcefile="src/devices/sound/hc55516.cpp" isdevice="yes" runnable="no">
+		<description>HC-55516</description>
+		<sound channels="0"/>
+	</machine>
+	<machine name="ieee488" sourcefile="src/devices/bus/ieee488/ieee488.cpp" isdevice="yes" runnable="no">
+		<description>IEEE-488 bus</description>
+	</machine>
+	<machine name="pit8259" sourcefile="src/devices/machine/pic8259.cpp" isdevice="yes" runnable="no">
+		<description>8259 PIC</description>
+	</machine>
+	<machine name="pit8253" sourcefile="src/devices/machine/pit8253.cpp" isdevice="yes" runnable="no">
+		<description>8253 PIT</description>
+	</machine>
+	<machine name="upd7201" sourcefile="src/devices/machine/z80dart.cpp" isdevice="yes" runnable="no">
+		<description>uPD7201</description>
+	</machine>
+	<machine name="z80dart_channel" sourcefile="src/devices/machine/z80dart.cpp" isdevice="yes" runnable="no">
+		<description>Z80 DART channel</description>
+	</machine>
+	<machine name="mc6852" sourcefile="src/devices/machine/mc6852.cpp" isdevice="yes" runnable="no">
+		<description>MC6852</description>
+	</machine>
+	<machine name="via6522" sourcefile="src/devices/machine/6522via.cpp" isdevice="yes" runnable="no">
+		<description>6522 VIA</description>
+	</machine>
+	<machine name="centronics" sourcefile="src/devices/bus/centronics/ctronics.cpp" isdevice="yes" runnable="no">
+		<description>Centronics</description>
+		<device type="printer" tag=":printer:printer">
+			<instance name="printer" briefname="prin"/>
+			<extension name="prn"/>
+		</device>
+	</machine>
+	<machine name="centronics_printer" sourcefile="src/devices/bus/centronics/printer.cpp" isdevice="yes" runnable="no">
+		<description>Centronics Printer</description>
+		<device type="printer" tag=":printer">
+			<instance name="printer" briefname="prin"/>
+			<extension name="prn"/>
+		</device>
+	</machine>
+	<machine name="rs232" sourcefile="src/devices/bus/rs232/rs232.cpp" isdevice="yes" runnable="no">
+		<description>RS232 Port</description>
+	</machine>
+	<machine name="victor9kb" sourcefile="src/mame/machine/victor9kb.cpp" isdevice="yes" runnable="no">
+		<description>Victor 9000 Keyboard</description>
+		<rom name="20-8021-139.z3" size="1024" crc="0fe9d53d" sha1="61d92ba90f98f8978bbd9303c1ac3134cde8cdcb" region="z3" offset="0"/>
+		<chip type="cpu" tag=":z3" name="I8021" clock="3579545"/>
+		<input players="1">
+			<control type="keyboard" buttons="104"/>
+		</input>
+	</machine>
+	<machine name="i8021" sourcefile="src/devices/cpu/mcs48/mcs48.cpp" isdevice="yes" runnable="no">
+		<description>I8021</description>
+	</machine>
+	<machine name="victor9k_fdc" sourcefile="src/mame/machine/victor9k_fdc.cpp" isdevice="yes" runnable="no">
+		<description>Victor 9000 FDC</description>
+		<rom name="36080.5d" size="1024" crc="9bf49f7d" sha1="b3a11bb65105db66ae1985b6f482aab6ea1da38b" region="5d" offset="0"/>
+		<rom name="100836-001.4k" size="2048" crc="adc601bd" sha1="6eeff3d2063ae2d97452101aa61e27ef83a467e5" region="gcr" offset="0"/>
+		<chip type="cpu" tag=":5d" name="I8048" clock="5000000"/>
+		<chip type="audio" tag=":5d:0:525qd:flopsndout" name="Speaker"/>
+		<chip type="audio" tag=":5d:0:525qd:floppysound" name="Floppy sound" clock="44100"/>
+		<chip type="audio" tag=":5d:1:525qd:flopsndout" name="Speaker"/>
+		<chip type="audio" tag=":5d:1:525qd:floppysound" name="Floppy sound" clock="44100"/>
+		<sound channels="2"/>
+		<device type="floppydisk" tag=":5d:0:525qd" interface="floppy_5_25">
+			<instance name="floppydisk1" briefname="flop1"/>
+			<extension name="img"/>
+			<extension name="d77"/>
+			<extension name="d88"/>
+			<extension name="1dd"/>
+			<extension name="dfi"/>
+			<extension name="imd"/>
+			<extension name="ipf"/>
+			<extension name="mfi"/>
+			<extension name="mfm"/>
+			<extension name="td0"/>
+			<extension name="cqm"/>
+			<extension name="cqi"/>
+			<extension name="dsk"/>
+		</device>
+		<device type="floppydisk" tag=":5d:1:525qd" interface="floppy_5_25">
+			<instance name="floppydisk2" briefname="flop2"/>
+			<extension name="img"/>
+			<extension name="d77"/>
+			<extension name="d88"/>
+			<extension name="1dd"/>
+			<extension name="dfi"/>
+			<extension name="imd"/>
+			<extension name="ipf"/>
+			<extension name="mfi"/>
+			<extension name="mfm"/>
+			<extension name="td0"/>
+			<extension name="cqm"/>
+			<extension name="cqi"/>
+			<extension name="dsk"/>
+		</device>
+		<slot name=":5d:0">
+			<slotoption name="525qd" devname="floppy_525_qd" default="yes"/>
+			<slotoption name="525ssqd" devname="floppy_525_ssqd"/>
+		</slot>
+		<slot name=":5d:1">
+			<slotoption name="525qd" devname="floppy_525_qd" default="yes"/>
+			<slotoption name="525ssqd" devname="floppy_525_ssqd"/>
+		</slot>
+	</machine>
+	<machine name="i8048" sourcefile="src/devices/cpu/mcs48/mcs48.cpp" isdevice="yes" runnable="no">
+		<description>I8048</description>
+		<chip type="audio" tag=":0:525qd:flopsndout" name="Speaker"/>
+		<chip type="audio" tag=":0:525qd:floppysound" name="Floppy sound" clock="44100"/>
+		<chip type="audio" tag=":1:525qd:flopsndout" name="Speaker"/>
+		<chip type="audio" tag=":1:525qd:floppysound" name="Floppy sound" clock="44100"/>
+		<sound channels="2"/>
+		<device type="floppydisk" tag=":0:525qd" interface="floppy_5_25">
+			<instance name="floppydisk1" briefname="flop1"/>
+			<extension name="img"/>
+			<extension name="d77"/>
+			<extension name="d88"/>
+			<extension name="1dd"/>
+			<extension name="dfi"/>
+			<extension name="imd"/>
+			<extension name="ipf"/>
+			<extension name="mfi"/>
+			<extension name="mfm"/>
+			<extension name="td0"/>
+			<extension name="cqm"/>
+			<extension name="cqi"/>
+			<extension name="dsk"/>
+		</device>
+		<device type="floppydisk" tag=":1:525qd" interface="floppy_5_25">
+			<instance name="floppydisk2" briefname="flop2"/>
+			<extension name="img"/>
+			<extension name="d77"/>
+			<extension name="d88"/>
+			<extension name="1dd"/>
+			<extension name="dfi"/>
+			<extension name="imd"/>
+			<extension name="ipf"/>
+			<extension name="mfi"/>
+			<extension name="mfm"/>
+			<extension name="td0"/>
+			<extension name="cqm"/>
+			<extension name="cqi"/>
+			<extension name="dsk"/>
+		</device>
+		<slot name=":0">
+			<slotoption name="525qd" devname="floppy_525_qd" default="yes"/>
+			<slotoption name="525ssqd" devname="floppy_525_ssqd"/>
+		</slot>
+		<slot name=":1">
+			<slotoption name="525qd" devname="floppy_525_qd" default="yes"/>
+			<slotoption name="525ssqd" devname="floppy_525_ssqd"/>
+		</slot>
+	</machine>
+	<machine name="floppy_connector" sourcefile="src/devices/imagedev/floppy.cpp" isdevice="yes" runnable="no">
+		<description>Floppy drive connector abstraction</description>
+		<chip type="audio" tag=":525qd:flopsndout" name="Speaker"/>
+		<chip type="audio" tag=":525qd:floppysound" name="Floppy sound" clock="44100"/>
+		<sound channels="1"/>
+		<device type="floppydisk" tag=":525qd" interface="floppy_5_25">
+			<instance name="floppydisk1" briefname="flop1"/>
+			<extension name="img"/>
+			<extension name="d77"/>
+			<extension name="d88"/>
+			<extension name="1dd"/>
+			<extension name="dfi"/>
+			<extension name="imd"/>
+			<extension name="ipf"/>
+			<extension name="mfi"/>
+			<extension name="mfm"/>
+			<extension name="td0"/>
+			<extension name="cqm"/>
+			<extension name="cqi"/>
+			<extension name="dsk"/>
+		</device>
+	</machine>
+	<machine name="floppy_525_qd" sourcefile="src/devices/imagedev/floppy.cpp" isdevice="yes" runnable="no">
+		<description>5.25&quot; quad density floppy drive</description>
+		<chip type="audio" tag=":flopsndout" name="Speaker"/>
+		<chip type="audio" tag=":floppysound" name="Floppy sound" clock="44100"/>
+		<sound channels="1"/>
+	</machine>
+	<machine name="flopsnd" sourcefile="src/devices/imagedev/floppy.cpp" isdevice="yes" runnable="no">
+		<description>Floppy sound</description>
+		<sound channels="0"/>
+	</machine>
+	<machine name="ram" sourcefile="src/devices/machine/ram.cpp" isdevice="yes" runnable="no">
+		<description>RAM</description>
+	</machine>
+	<machine name="software_list" sourcefile="src/emu/softlist.cpp" isdevice="yes" runnable="no">
+		<description>Software list</description>
+	</machine>
+	<machine name="covox_stereo" sourcefile="src/devices/bus/centronics/covox.cpp" isdevice="yes" runnable="no">
+		<description>Covox (Stereo-in-1)</description>
+		<chip type="audio" tag=":lspeaker" name="Speaker"/>
+		<chip type="audio" tag=":rspeaker" name="Speaker"/>
+		<chip type="audio" tag=":dac_left" name="DAC"/>
+		<chip type="audio" tag=":dac_right" name="DAC"/>
+		<sound channels="2"/>
+	</machine>
+	<machine name="dac" sourcefile="src/devices/sound/dac.cpp" isdevice="yes" runnable="no">
+		<description>DAC</description>
+		<sound channels="0"/>
+	</machine>
+	<machine name="covox" sourcefile="src/devices/bus/centronics/covox.cpp" isdevice="yes" runnable="no">
+		<description>Covox Speech Thing</description>
+		<chip type="audio" tag=":mono" name="Speaker"/>
+		<chip type="audio" tag=":dac" name="DAC"/>
+		<sound channels="1"/>
+	</machine>
+	<machine name="p72" sourcefile="src/devices/bus/centronics/nec_p72.cpp" isdevice="yes" runnable="no">
+		<description>NEC PinWrite P72</description>
+		<rom name="p72.2c" size="1048576" crc="2bc6846f" sha1="10430f1d3b73ad413d77053515d9d53831a1341b" region="maincpu" offset="0"/>
+		<chip type="cpu" tag=":maincpu" name="V33" clock="8000000"/>
+	</machine>
+	<machine name="v33" sourcefile="src/devices/cpu/nec/nec.cpp" isdevice="yes" runnable="no">
+		<description>V33</description>
+	</machine>
+	<machine name="ap2000" sourcefile="src/devices/bus/centronics/epson_lx810l.cpp" isdevice="yes" runnable="no">
+		<description>Epson ActionPrinter 2000</description>
+		<rom name="ap2k.ic3c" size="32768" crc="ee7294b7" sha1="219ffa6ff661ce95d5772c9fc1967093718f04e9" region="maincpu" offset="0"/>
+		<rom name="at93c06" size="32" status="nodump" region="eeprom" offset="0"/>
+		<chip type="cpu" tag=":maincpu" name="uPD7810" clock="14745600"/>
+		<chip type="audio" tag=":mono" name="Speaker"/>
+		<chip type="audio" tag=":dac" name="DAC"/>
+		<display tag=":screen" type="raster" rotate="0" width="1024" height="576" refresh="60.000000" />
+		<sound channels="1"/>
+		<input players="1">
+			<control type="keyboard" buttons="4"/>
+		</input>
+		<dipswitch name="Short tear-off" tag=":DIPSW2" mask="1">
+			<dipvalue name="Invalid" value="1" default="yes"/>
+			<dipvalue name="Valid" value="0"/>
+		</dipswitch>
+		<dipswitch name="Cut-sheet feeder mode" tag=":DIPSW2" mask="2">
+			<dipvalue name="ON" value="2"/>
+			<dipvalue name="OFF" value="0" default="yes"/>
+		</dipswitch>
+		<dipswitch name="Skip-over-perforation" tag=":DIPSW2" mask="4">
+			<dipvalue name="ON" value="4"/>
+			<dipvalue name="OFF" value="0" default="yes"/>
+		</dipswitch>
+		<dipswitch name="Auto line feed" tag=":DIPSW2" mask="8">
+			<dipvalue name="ON" value="8"/>
+			<dipvalue name="OFF" value="0" default="yes"/>
+		</dipswitch>
+		<dipswitch name="Character spacing" tag=":DIPSW1" mask="1">
+			<dipvalue name="12 cpi" value="1" default="yes"/>
+			<dipvalue name="10 cpi" value="0"/>
+		</dipswitch>
+		<dipswitch name="Shape of zero" tag=":DIPSW1" mask="2">
+			<dipvalue name="Slashed" value="2"/>
+			<dipvalue name="Not slashed" value="0" default="yes"/>
+		</dipswitch>
+		<dipswitch name="Page length" tag=":DIPSW1" mask="12">
+			<dipvalue name="11 inches" value="0"/>
+			<dipvalue name="12 inches" value="4"/>
+			<dipvalue name="8.5 inches" value="8" default="yes"/>
+			<dipvalue name="11.7 inches" value="12"/>
+		</dipswitch>
+		<dipswitch name="Character table" tag=":DIPSW1" mask="16">
+			<dipvalue name="Graphics" value="16" default="yes"/>
+			<dipvalue name="Italics" value="0"/>
+		</dipswitch>
+		<dipswitch name="International characters and PC selection" tag=":DIPSW1" mask="224">
+			<dipvalue name="United States" value="224" default="yes"/>
+			<dipvalue name="France" value="96"/>
+			<dipvalue name="Germany" value="160"/>
+			<dipvalue name="United Kingdom" value="32"/>
+			<dipvalue name="Denmark" value="192"/>
+			<dipvalue name="Sweden" value="64"/>
+			<dipvalue name="Italy" value="128"/>
+			<dipvalue name="Spain" value="0"/>
+		</dipswitch>
+	</machine>
+	<machine name="upd7810" sourcefile="src/devices/cpu/upd7810/upd7810.cpp" isdevice="yes" runnable="no">
+		<description>uPD7810</description>
+	</machine>
+	<machine name="e05a30" sourcefile="src/devices/machine/e05a30.cpp" isdevice="yes" runnable="no">
+		<description>E05A30</description>
+	</machine>
+	<machine name="93c06_16" sourcefile="src/devices/machine/eepromser.cpp" isdevice="yes" runnable="no">
+		<description>Serial EEPROM 93C06 (16x16)</description>
+	</machine>
+	<machine name="stepper" sourcefile="src/devices/machine/steppers.cpp" isdevice="yes" runnable="no">
+		<description>Stepper Motor</description>
+	</machine>
+	<machine name="lx810l" sourcefile="src/devices/bus/centronics/epson_lx810l.cpp" isdevice="yes" runnable="no">
+		<description>Epson LX-810L</description>
+		<rom name="lx810l.ic3c" size="32768" crc="a66454e1" sha1="8e6f2f98abcbd8af6e34b9ba746edf0d18aef843" region="maincpu" offset="0"/>
+		<rom name="at93c06" size="32" status="nodump" region="eeprom" offset="0"/>
+		<chip type="cpu" tag=":maincpu" name="uPD7810" clock="14745600"/>
+		<chip type="audio" tag=":mono" name="Speaker"/>
+		<chip type="audio" tag=":dac" name="DAC"/>
+		<display tag=":screen" type="raster" rotate="0" width="1024" height="576" refresh="60.000000" />
+		<sound channels="1"/>
+		<input players="1">
+			<control type="keyboard" buttons="4"/>
+		</input>
+		<dipswitch name="Short tear-off" tag=":DIPSW2" mask="1">
+			<dipvalue name="Invalid" value="1" default="yes"/>
+			<dipvalue name="Valid" value="0"/>
+		</dipswitch>
+		<dipswitch name="Cut-sheet feeder mode" tag=":DIPSW2" mask="2">
+			<dipvalue name="ON" value="2"/>
+			<dipvalue name="OFF" value="0" default="yes"/>
+		</dipswitch>
+		<dipswitch name="Skip-over-perforation" tag=":DIPSW2" mask="4">
+			<dipvalue name="ON" value="4"/>
+			<dipvalue name="OFF" value="0" default="yes"/>
+		</dipswitch>
+		<dipswitch name="Auto line feed" tag=":DIPSW2" mask="8">
+			<dipvalue name="ON" value="8"/>
+			<dipvalue name="OFF" value="0" default="yes"/>
+		</dipswitch>
+		<dipswitch name="Character spacing" tag=":DIPSW1" mask="1">
+			<dipvalue name="12 cpi" value="1" default="yes"/>
+			<dipvalue name="10 cpi" value="0"/>
+		</dipswitch>
+		<dipswitch name="Shape of zero" tag=":DIPSW1" mask="2">
+			<dipvalue name="Slashed" value="2"/>
+			<dipvalue name="Not slashed" value="0" default="yes"/>
+		</dipswitch>
+		<dipswitch name="Page length" tag=":DIPSW1" mask="12">
+			<dipvalue name="11 inches" value="0"/>
+			<dipvalue name="12 inches" value="4"/>
+			<dipvalue name="8.5 inches" value="8" default="yes"/>
+			<dipvalue name="11.7 inches" value="12"/>
+		</dipswitch>
+		<dipswitch name="Character table" tag=":DIPSW1" mask="16">
+			<dipvalue name="Graphics" value="16" default="yes"/>
+			<dipvalue name="Italics" value="0"/>
+		</dipswitch>
+		<dipswitch name="International characters and PC selection" tag=":DIPSW1" mask="224">
+			<dipvalue name="United States" value="224" default="yes"/>
+			<dipvalue name="France" value="96"/>
+			<dipvalue name="Germany" value="160"/>
+			<dipvalue name="United Kingdom" value="32"/>
+			<dipvalue name="Denmark" value="192"/>
+			<dipvalue name="Sweden" value="64"/>
+			<dipvalue name="Italy" value="128"/>
+			<dipvalue name="Spain" value="0"/>
+		</dipswitch>
+	</machine>
+	<machine name="lx800" sourcefile="src/devices/bus/centronics/epson_lx800.cpp" isdevice="yes" runnable="no">
+		<description>Epson LX-800</description>
+		<rom name="lx800.ic3c" size="32768" crc="da06c45b" sha1="9618c940dd10d5b43cd1edd5763b90e6447de667" region="maincpu" offset="0"/>
+		<chip type="cpu" tag=":maincpu" name="uPD7810" clock="14745600"/>
+		<chip type="audio" tag=":mono" name="Speaker"/>
+		<chip type="audio" tag=":beeper" name="Beep" clock="4000"/>
+		<sound channels="1"/>
+		<input players="1">
+			<control type="keyboard" buttons="3"/>
+		</input>
+		<dipswitch name="Page length" tag=":DIPSW2" mask="1">
+			<dipvalue name="12&quot;" value="1"/>
+			<dipvalue name="11&quot;" value="0" default="yes"/>
+		</dipswitch>
+		<dipswitch name="Cut sheet feeder mode" tag=":DIPSW2" mask="2">
+			<dipvalue name="Valid" value="2"/>
+			<dipvalue name="Invalid" value="0" default="yes"/>
+		</dipswitch>
+		<dipswitch name="1&quot; skip over perforation" tag=":DIPSW2" mask="4">
+			<dipvalue name="Valid" value="4"/>
+			<dipvalue name="Invalid" value="0" default="yes"/>
+		</dipswitch>
+		<dipswitch name="AUTO FEED XT control" tag=":DIPSW2" mask="8">
+			<dipvalue name="Fix to LOW" value="8"/>
+			<dipvalue name="Depends on external signal" value="0" default="yes"/>
+		</dipswitch>
+		<dipswitch name="Typeface" tag=":DIPSW1" mask="1">
+			<dipvalue name="Condensed" value="1"/>
+			<dipvalue name="Normal" value="0" default="yes"/>
+		</dipswitch>
+		<dipswitch name="ZERO font" tag=":DIPSW1" mask="2">
+			<dipvalue name="0" value="2"/>
+			<dipvalue name="0" value="0" default="yes"/>
+		</dipswitch>
+		<dipswitch name="Character Table" tag=":DIPSW1" mask="4">
+			<dipvalue name="Graphic" value="4"/>
+			<dipvalue name="Italic" value="0" default="yes"/>
+		</dipswitch>
+		<dipswitch name="Paper-out detection" tag=":DIPSW1" mask="8">
+			<dipvalue name="Valid" value="8"/>
+			<dipvalue name="Invalid" value="0" default="yes"/>
+		</dipswitch>
+		<dipswitch name="Printing quality" tag=":DIPSW1" mask="16">
+			<dipvalue name="NLQ" value="16"/>
+			<dipvalue name="Draft" value="0" default="yes"/>
+		</dipswitch>
+		<dipswitch name="International character set" tag=":DIPSW1" mask="224">
+			<dipvalue name="U.S.A." value="224" default="yes"/>
+			<dipvalue name="France" value="96"/>
+			<dipvalue name="Germany" value="160"/>
+			<dipvalue name="U.K." value="32"/>
+			<dipvalue name="Denmark" value="192"/>
+			<dipvalue name="Sweden" value="64"/>
+			<dipvalue name="Italy" value="128"/>
+			<dipvalue name="Spain" value="0"/>
+		</dipswitch>
+	</machine>
+	<machine name="beep" sourcefile="src/devices/sound/beep.cpp" isdevice="yes" runnable="no">
+		<description>Beep</description>
+		<sound channels="0"/>
+	</machine>
+	<machine name="e05a03" sourcefile="src/devices/machine/e05a03.cpp" isdevice="yes" runnable="no">
+		<description>E05A03</description>
+	</machine>
+	<machine name="ex800" sourcefile="src/devices/bus/centronics/epson_ex800.cpp" isdevice="yes" runnable="no">
+		<description>Epson EX-800</description>
+		<rom name="w8_pe9.9b" size="32768" crc="6dd41e9b" sha1="8e30ead727b9317154742efd881206e9f9bbf95b" region="maincpu" offset="0"/>
+		<chip type="cpu" tag=":maincpu" name="uPD7810" clock="12000000"/>
+		<chip type="audio" tag=":mono" name="Speaker"/>
+		<chip type="audio" tag=":beeper" name="Beep" clock="4000"/>
+		<sound channels="1"/>
+		<input players="1">
+			<control type="keyboard" buttons="11"/>
+		</input>
+		<dipswitch name="Condensed characters" tag=":DSW_1" mask="1">
+			<dipvalue name="Off" value="0" default="yes"/>
+			<dipvalue name="On" value="1"/>
+		</dipswitch>
+		<dipswitch name="Slashed zero" tag=":DSW_1" mask="2">
+			<dipvalue name="Off" value="0" default="yes"/>
+			<dipvalue name="On" value="2"/>
+		</dipswitch>
+		<dipswitch name="Character table" tag=":DSW_1" mask="4">
+			<dipvalue name="Italics" value="0" default="yes"/>
+			<dipvalue name="Graphics" value="4"/>
+		</dipswitch>
+		<dipswitch name="Printer commands" tag=":DSW_1" mask="8">
+			<dipvalue name="ESC/P" value="0" default="yes"/>
+			<dipvalue name="IBM printer emulation" value="8"/>
+		</dipswitch>
+		<dipswitch name="Print quality" tag=":DSW_1" mask="16">
+			<dipvalue name="Draft" value="0" default="yes"/>
+			<dipvalue name="NLQ" value="16"/>
+		</dipswitch>
+		<dipswitch name="Int. character set" tag=":DSW_1" mask="224">
+			<dipvalue name="USA" value="0" default="yes"/>
+			<dipvalue name="French" value="32"/>
+			<dipvalue name="German" value="32"/>
+			<dipvalue name="UK" value="64"/>
+			<dipvalue name="Danish" value="64"/>
+			<dipvalue name="Swedish" value="96"/>
+			<dipvalue name="Italian" value="96"/>
+			<dipvalue name="Spanish" value="128"/>
+		</dipswitch>
+		<dipswitch name="Page length" tag=":DSW_2" mask="1">
+			<dipvalue name="11 inch" value="0" default="yes"/>
+			<dipvalue name="12 inch" value="1"/>
+		</dipswitch>
+		<dipswitch name="Auto. sheet feeder" tag=":DSW_2" mask="2">
+			<dipvalue name="Canceled" value="0" default="yes"/>
+			<dipvalue name="Selected" value="2"/>
+		</dipswitch>
+		<dipswitch name="Skip-over-perforation" tag=":DSW_2" mask="4">
+			<dipvalue name="None" value="0" default="yes"/>
+			<dipvalue name="1 inch" value="4"/>
+		</dipswitch>
+		<dipswitch name="Add LF after CR" tag=":DSW_2" mask="8">
+			<dipvalue name="CR only" value="0" default="yes"/>
+			<dipvalue name="CR + LF" value="8"/>
+		</dipswitch>
+		<dipswitch name="Interface type" tag=":DSW_2" mask="48">
+			<dipvalue name="Parallel" value="0" default="yes"/>
+			<dipvalue name="Serial (odd parity)" value="16"/>
+			<dipvalue name="Serial (even parity)" value="32"/>
+			<dipvalue name="Serial (no parity)" value="48"/>
+		</dipswitch>
+		<dipswitch name="Baud rate" tag=":DSW_2" mask="192">
+			<dipvalue name="9600" value="0" default="yes"/>
+			<dipvalue name="4800" value="64"/>
+			<dipvalue name="1200" value="128"/>
+			<dipvalue name="300" value="192"/>
+		</dipswitch>
+	</machine>
+	<machine name="comx_pl80" sourcefile="src/devices/bus/centronics/comxpl80.cpp" isdevice="yes" runnable="no">
+		<description>COMX PL-80</description>
+		<rom name="pl80.pt6" size="3584" crc="ae059e5b" sha1="f25812606b0082d32eb603d0a702a2187089d332" region="cx005" offset="80"/>
+		<rom name="it.em.ou.bin" size="8192" crc="1b4a3198" sha1="138ff6666a31c2d18cd63e609dd94d9cd1529931" region="gfx1" offset="2000"/>
+		<rom name="tiny.bin" size="1024" crc="940ec1ed" sha1="ad83a3b57e2f0fbaa1e40644cd999b3f239635e8" region="gfx1" offset="4000"/>
+		<chip type="cpu" tag=":cx005" name="M6805" clock="4000000"/>
+		<configuration name="COMX PL-80 Font Pack" tag=":FONT" mask="3">
+			<confsetting name="None" value="0" default="yes"/>
+			<confsetting name="Italic, Emphasized and Outline" value="1"/>
+			<confsetting name="Tiny" value="2"/>
+		</configuration>
+	</machine>
+	<machine name="m6805" sourcefile="src/devices/cpu/m6805/m6805.h" isdevice="yes" runnable="no">
+		<description>M6805</description>
+	</machine>
+	<machine name="pseudo_terminal" sourcefile="src/devices/bus/rs232/pty.cpp" isdevice="yes" runnable="no">
+		<description>Pseudo terminal</description>
+		<configuration name="Parity" tag=":RS232_PARITY" mask="255">
+			<confsetting name="None" value="0" default="yes"/>
+			<confsetting name="Odd" value="1"/>
+			<confsetting name="Even" value="2"/>
+			<confsetting name="Mark" value="3"/>
+			<confsetting name="Space" value="4"/>
+		</configuration>
+		<configuration name="Data Bits" tag=":RS232_DATABITS" mask="255">
+			<confsetting name="5" value="0"/>
+			<confsetting name="6" value="1"/>
+			<confsetting name="7" value="2"/>
+			<confsetting name="8" value="3" default="yes"/>
+		</configuration>
+		<configuration name="Start Bits" tag=":RS232_STARTBITS" mask="255">
+			<confsetting name="0" value="0"/>
+			<confsetting name="1" value="1" default="yes"/>
+		</configuration>
+		<configuration name="Stop Bits" tag=":RS232_STOPBITS" mask="255">
+			<confsetting name="0" value="0"/>
+			<confsetting name="1" value="1" default="yes"/>
+			<confsetting name="1.5" value="2"/>
+			<confsetting name="2" value="3"/>
+		</configuration>
+		<configuration name="RX Baud" tag=":RS232_RXBAUD" mask="255">
+			<confsetting name="110" value="0"/>
+			<confsetting name="150" value="1"/>
+			<confsetting name="300" value="2"/>
+			<confsetting name="600" value="3"/>
+			<confsetting name="1200" value="4"/>
+			<confsetting name="2400" value="5"/>
+			<confsetting name="4800" value="6"/>
+			<confsetting name="9600" value="7" default="yes"/>
+			<confsetting name="14400" value="8"/>
+			<confsetting name="19200" value="9"/>
+			<confsetting name="28800" value="10"/>
+			<confsetting name="38400" value="11"/>
+			<confsetting name="57600" value="12"/>
+			<confsetting name="115200" value="13"/>
+		</configuration>
+		<configuration name="TX Baud" tag=":RS232_TXBAUD" mask="255">
+			<confsetting name="110" value="0"/>
+			<confsetting name="150" value="1"/>
+			<confsetting name="300" value="2"/>
+			<confsetting name="600" value="3"/>
+			<confsetting name="1200" value="4"/>
+			<confsetting name="2400" value="5"/>
+			<confsetting name="4800" value="6"/>
+			<confsetting name="9600" value="7" default="yes"/>
+			<confsetting name="14400" value="8"/>
+			<confsetting name="19200" value="9"/>
+			<confsetting name="28800" value="10"/>
+			<confsetting name="38400" value="11"/>
+			<confsetting name="57600" value="12"/>
+			<confsetting name="115200" value="13"/>
+		</configuration>
+	</machine>
+	<machine name="serial_terminal" sourcefile="src/devices/bus/rs232/terminal.cpp" isdevice="yes" runnable="no">
+		<description>Serial Terminal</description>
+		<display tag=":terminal_screen" type="raster" rotate="0" width="640" height="240" refresh="50.000000" />
+		<input players="1">
+			<control type="keyboard" buttons="73"/>
+		</input>
+		<configuration name="Stop Bits" tag=":RS232_STOPBITS" mask="255">
+			<confsetting name="0" value="0"/>
+			<confsetting name="1" value="1" default="yes"/>
+			<confsetting name="1.5" value="2"/>
+			<confsetting name="2" value="3"/>
+		</configuration>
+		<configuration name="Parity" tag=":RS232_PARITY" mask="255">
+			<confsetting name="None" value="0" default="yes"/>
+			<confsetting name="Odd" value="1"/>
+			<confsetting name="Even" value="2"/>
+			<confsetting name="Mark" value="3"/>
+			<confsetting name="Space" value="4"/>
+		</configuration>
+		<configuration name="TX Baud" tag=":RS232_TXBAUD" mask="255">
+			<confsetting name="110" value="0"/>
+			<confsetting name="150" value="1"/>
+			<confsetting name="300" value="2"/>
+			<confsetting name="600" value="3"/>
+			<confsetting name="1200" value="4"/>
+			<confsetting name="2400" value="5"/>
+			<confsetting name="4800" value="6"/>
+			<confsetting name="9600" value="7" default="yes"/>
+			<confsetting name="14400" value="8"/>
+			<confsetting name="19200" value="9"/>
+			<confsetting name="28800" value="10"/>
+			<confsetting name="38400" value="11"/>
+			<confsetting name="57600" value="12"/>
+			<confsetting name="115200" value="13"/>
+		</configuration>
+		<configuration name="Start Bits" tag=":RS232_STARTBITS" mask="255">
+			<confsetting name="0" value="0"/>
+			<confsetting name="1" value="1" default="yes"/>
+		</configuration>
+		<configuration name="Data Bits" tag=":RS232_DATABITS" mask="255">
+			<confsetting name="5" value="0"/>
+			<confsetting name="6" value="1"/>
+			<confsetting name="7" value="2"/>
+			<confsetting name="8" value="3" default="yes"/>
+		</configuration>
+		<configuration name="RX Baud" tag=":RS232_RXBAUD" mask="255">
+			<confsetting name="110" value="0"/>
+			<confsetting name="150" value="1"/>
+			<confsetting name="300" value="2"/>
+			<confsetting name="600" value="3"/>
+			<confsetting name="1200" value="4"/>
+			<confsetting name="2400" value="5"/>
+			<confsetting name="4800" value="6"/>
+			<confsetting name="9600" value="7" default="yes"/>
+			<confsetting name="14400" value="8"/>
+			<confsetting name="19200" value="9"/>
+			<confsetting name="28800" value="10"/>
+			<confsetting name="38400" value="11"/>
+			<confsetting name="57600" value="12"/>
+			<confsetting name="115200" value="13"/>
+		</configuration>
+		<configuration name="Cursor" tag=":TERM_CONF" mask="1">
+			<confsetting name="No" value="0"/>
+			<confsetting name="Yes" value="1" default="yes"/>
+		</configuration>
+		<configuration name="Type" tag=":TERM_CONF" mask="2">
+			<confsetting name="Underline" value="0"/>
+			<confsetting name="Block" value="2" default="yes"/>
+		</configuration>
+		<configuration name="Blinking" tag=":TERM_CONF" mask="4">
+			<confsetting name="No" value="0"/>
+			<confsetting name="Yes" value="4" default="yes"/>
+		</configuration>
+		<configuration name="Invert" tag=":TERM_CONF" mask="8">
+			<confsetting name="No" value="0"/>
+			<confsetting name="Yes" value="8" default="yes"/>
+		</configuration>
+		<configuration name="Color" tag=":TERM_CONF" mask="48">
+			<confsetting name="Green" value="0" default="yes"/>
+			<confsetting name="Amber" value="16"/>
+			<confsetting name="White" value="32"/>
+		</configuration>
+	</machine>
+	<machine name="generic_keyboard" sourcefile="src/devices/machine/keyboard.cpp" isdevice="yes" runnable="no">
+		<description>Generic Keyboard</description>
+		<input players="1">
+			<control type="keyboard" buttons="73"/>
+		</input>
+	</machine>
+	<machine name="null_modem" sourcefile="src/devices/bus/rs232/null_modem.cpp" isdevice="yes" runnable="no">
+		<description>Null Modem</description>
+		<configuration name="Stop Bits" tag=":RS232_STOPBITS" mask="255">
+			<confsetting name="0" value="0"/>
+			<confsetting name="1" value="1" default="yes"/>
+			<confsetting name="1.5" value="2"/>
+			<confsetting name="2" value="3"/>
+		</configuration>
+		<configuration name="Parity" tag=":RS232_PARITY" mask="255">
+			<confsetting name="None" value="0" default="yes"/>
+			<confsetting name="Odd" value="1"/>
+			<confsetting name="Even" value="2"/>
+			<confsetting name="Mark" value="3"/>
+			<confsetting name="Space" value="4"/>
+		</configuration>
+		<configuration name="Data Bits" tag=":RS232_DATABITS" mask="255">
+			<confsetting name="5" value="0"/>
+			<confsetting name="6" value="1"/>
+			<confsetting name="7" value="2"/>
+			<confsetting name="8" value="3" default="yes"/>
+		</configuration>
+		<configuration name="RX Baud" tag=":RS232_RXBAUD" mask="255">
+			<confsetting name="110" value="0"/>
+			<confsetting name="150" value="1"/>
+			<confsetting name="300" value="2"/>
+			<confsetting name="600" value="3"/>
+			<confsetting name="1200" value="4"/>
+			<confsetting name="2400" value="5"/>
+			<confsetting name="4800" value="6"/>
+			<confsetting name="9600" value="7" default="yes"/>
+			<confsetting name="14400" value="8"/>
+			<confsetting name="19200" value="9"/>
+			<confsetting name="28800" value="10"/>
+			<confsetting name="38400" value="11"/>
+			<confsetting name="57600" value="12"/>
+			<confsetting name="115200" value="13"/>
+		</configuration>
+		<configuration name="Start Bits" tag=":RS232_STARTBITS" mask="255">
+			<confsetting name="0" value="0"/>
+			<confsetting name="1" value="1" default="yes"/>
+		</configuration>
+		<configuration name="TX Baud" tag=":RS232_TXBAUD" mask="255">
+			<confsetting name="110" value="0"/>
+			<confsetting name="150" value="1"/>
+			<confsetting name="300" value="2"/>
+			<confsetting name="600" value="3"/>
+			<confsetting name="1200" value="4"/>
+			<confsetting name="2400" value="5"/>
+			<confsetting name="4800" value="6"/>
+			<confsetting name="9600" value="7" default="yes"/>
+			<confsetting name="14400" value="8"/>
+			<confsetting name="19200" value="9"/>
+			<confsetting name="28800" value="10"/>
+			<confsetting name="38400" value="11"/>
+			<confsetting name="57600" value="12"/>
+			<confsetting name="115200" value="13"/>
+		</configuration>
+		<device type="serial" tag=":stream">
+			<instance name="bitbngr" briefname="bitb"/>
+		</device>
+	</machine>
+	<machine name="bitbanger" sourcefile="src/devices/imagedev/bitbngr.cpp" isdevice="yes" runnable="no">
+		<description>Bitbanger</description>
+	</machine>
+	<machine name="rs232_loopback" sourcefile="src/devices/bus/rs232/loopback.cpp" isdevice="yes" runnable="no">
+		<description>RS232 Loopback</description>
+	</machine>
+	<machine name="serial_printer" sourcefile="src/devices/bus/rs232/printer.cpp" isdevice="yes" runnable="no">
+		<description>Serial Printer</description>
+		<configuration name="Parity" tag=":RS232_PARITY" mask="255">
+			<confsetting name="None" value="0" default="yes"/>
+			<confsetting name="Odd" value="1"/>
+			<confsetting name="Even" value="2"/>
+			<confsetting name="Mark" value="3"/>
+			<confsetting name="Space" value="4"/>
+		</configuration>
+		<configuration name="Stop Bits" tag=":RS232_STOPBITS" mask="255">
+			<confsetting name="0" value="0"/>
+			<confsetting name="1" value="1" default="yes"/>
+			<confsetting name="1.5" value="2"/>
+			<confsetting name="2" value="3"/>
+		</configuration>
+		<configuration name="Data Bits" tag=":RS232_DATABITS" mask="255">
+			<confsetting name="5" value="0"/>
+			<confsetting name="6" value="1"/>
+			<confsetting name="7" value="2"/>
+			<confsetting name="8" value="3" default="yes"/>
+		</configuration>
+		<configuration name="Start Bits" tag=":RS232_STARTBITS" mask="255">
+			<confsetting name="0" value="0"/>
+			<confsetting name="1" value="1" default="yes"/>
+		</configuration>
+		<configuration name="RX Baud" tag=":RS232_RXBAUD" mask="255">
+			<confsetting name="110" value="0"/>
+			<confsetting name="150" value="1"/>
+			<confsetting name="300" value="2"/>
+			<confsetting name="600" value="3"/>
+			<confsetting name="1200" value="4"/>
+			<confsetting name="2400" value="5"/>
+			<confsetting name="4800" value="6"/>
+			<confsetting name="9600" value="7" default="yes"/>
+			<confsetting name="14400" value="8"/>
+			<confsetting name="19200" value="9"/>
+			<confsetting name="28800" value="10"/>
+			<confsetting name="38400" value="11"/>
+			<confsetting name="57600" value="12"/>
+			<confsetting name="115200" value="13"/>
+		</configuration>
+		<device type="printer" tag=":printer">
+			<instance name="printer2" briefname="prin2"/>
+			<extension name="prn"/>
+		</device>
+	</machine>
+	<machine name="serial_keyboard" sourcefile="src/devices/bus/rs232/keyboard.cpp" isdevice="yes" runnable="no">
+		<description>Serial Keyboard</description>
+		<input players="1">
+			<control type="keyboard" buttons="73"/>
+		</input>
+		<configuration name="Stop Bits" tag=":RS232_STOPBITS" mask="255">
+			<confsetting name="0" value="0"/>
+			<confsetting name="1" value="1" default="yes"/>
+			<confsetting name="1.5" value="2"/>
+			<confsetting name="2" value="3"/>
+		</configuration>
+		<configuration name="Data Bits" tag=":RS232_DATABITS" mask="255">
+			<confsetting name="5" value="0"/>
+			<confsetting name="6" value="1"/>
+			<confsetting name="7" value="2"/>
+			<confsetting name="8" value="3" default="yes"/>
+		</configuration>
+		<configuration name="Start Bits" tag=":RS232_STARTBITS" mask="255">
+			<confsetting name="0" value="0"/>
+			<confsetting name="1" value="1" default="yes"/>
+		</configuration>
+		<configuration name="TX Baud" tag=":RS232_TXBAUD" mask="255">
+			<confsetting name="110" value="0"/>
+			<confsetting name="150" value="1"/>
+			<confsetting name="300" value="2"/>
+			<confsetting name="600" value="3"/>
+			<confsetting name="1200" value="4"/>
+			<confsetting name="2400" value="5"/>
+			<confsetting name="4800" value="6"/>
+			<confsetting name="9600" value="7" default="yes"/>
+			<confsetting name="14400" value="8"/>
+			<confsetting name="19200" value="9"/>
+			<confsetting name="28800" value="10"/>
+			<confsetting name="38400" value="11"/>
+			<confsetting name="57600" value="12"/>
+			<confsetting name="115200" value="13"/>
+		</configuration>
+		<configuration name="Parity" tag=":RS232_PARITY" mask="255">
+			<confsetting name="None" value="0" default="yes"/>
+			<confsetting name="Odd" value="1"/>
+			<confsetting name="Even" value="2"/>
+			<confsetting name="Mark" value="3"/>
+			<confsetting name="Space" value="4"/>
+		</configuration>
+	</machine>
+	<machine name="floppy_525_ssqd" sourcefile="src/devices/imagedev/floppy.cpp" isdevice="yes" runnable="no">
+		<description>5.25&quot; single-sided quad density floppy drive</description>
+		<chip type="audio" tag=":flopsndout" name="Speaker"/>
+		<chip type="audio" tag=":floppysound" name="Floppy sound" clock="44100"/>
+		<sound channels="1"/>
+	</machine>
+	<machine name="nvram" sourcefile="src/devices/machine/nvram.cpp" isdevice="yes" runnable="no">
+		<description>NVRAM</description>
+	</machine>
+	<machine name="m6502" sourcefile="src/devices/cpu/m6502/m6502.cpp" isdevice="yes" runnable="no">
+		<description>M6502</description>
+	</machine>
+	<machine name="riot6532" sourcefile="src/devices/machine/6532riot.cpp" isdevice="yes" runnable="no">
+		<description>6532 RIOT</description>
+	</machine>
+	<machine name="pia6821" sourcefile="src/devices/machine/6821pia.cpp" isdevice="yes" runnable="no">
+		<description>6821 PIA</description>
+	</machine>
+	<machine name="victory_sound" sourcefile="src/mame/audio/exidy.cpp" isdevice="yes" runnable="no">
+		<description>Exidy SFX+PSG+Speech</description>
+		<sound channels="0"/>
+	</machine>
+	<machine name="tms5220" sourcefile="src/devices/sound/tms5220.cpp" isdevice="yes" runnable="no">
+		<description>TMS5220</description>
+		<sound channels="0"/>
+	</machine>
+	<machine name="samples" sourcefile="src/devices/sound/samples.cpp" isdevice="yes" runnable="no" sampleof="genpin">
+		<description>Samples</description>
+		<sound channels="0"/>
+	</machine>
+</mame>
