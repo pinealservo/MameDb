@@ -72,9 +72,9 @@ createTables =
 
 dropTables :: Session ()
 dropTables =
-  sql "DROP TABLE IF EXISTS machine_roms; \
-      \DROP TABLE IF EXISTS rom; \
-      \DROP TABLE IF EXISTS machine;"
+  sql "DROP TABLE IF EXISTS machine_roms CASCADE; \
+      \DROP TABLE IF EXISTS rom CASCADE; \
+      \DROP TABLE IF EXISTS machine CASCADE;"
 
 insertMachine :: Query Machine Int32
 insertMachine = statement sqltext encoder decoder True
